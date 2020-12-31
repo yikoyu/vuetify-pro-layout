@@ -1,0 +1,21 @@
+#app, #root, body {
+  height: 100%;
+}
+html {
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
