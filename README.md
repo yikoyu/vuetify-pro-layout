@@ -8,6 +8,22 @@ yarn add vuetify-pro-layout
 npm i vuetify-pro-layout -S
 ```
 
+
+```typescript
+import { defaultIcons } from 'vuetify-pro-layout'
+import 'vuetify-pro-layout/dist/vuetify-pro-layout.min.css' // 引入vuetify-pro-layout的css
+
+export default return new Vuetify({
+  icons: {
+    iconfont: 'mdiSvg',
+    values: {
+      // 引入使用的图标
+      ...defaultIcons
+    }
+  }
+})
+```
+
 ## 使用
 
 ```vue
