@@ -1,3 +1,9 @@
+import Vue from 'vue'
+
+export declare class VuetifyProLayoutComponent extends Vue {
+  static install (vue: typeof Vue): void
+}
+
 export interface ISettings {
   dark: boolean
   mixed: boolean
