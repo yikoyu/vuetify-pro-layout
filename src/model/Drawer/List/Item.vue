@@ -1,7 +1,7 @@
 <template>
   <v-list-item
     v-if="show"
-    class="v-list-item--default"
+    class="default-drawer-list-item v-list-item--default"
     :href="item.meta.target === '_blank' ? item.path : undefined"
     :rel="item.meta.target === '_blank' ? 'nofollow' : undefined"
     :target="item.meta.target"

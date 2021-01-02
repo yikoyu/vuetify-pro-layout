@@ -1,6 +1,6 @@
 <template>
   <span class="v-app-tooltip-btn d-inline-block">
-    <v-tooltip bottom content-class="v-app-tooltip-btn__content" open-delay="200">
+    <v-tooltip bottom content-class="app-tooltip-btn__content v-app-tooltip-btn__content" open-delay="200">
       <template #activator="{ on }">
         <v-btn
           :aria-label="path"
@@ -37,7 +37,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.v-app-tooltip-btn__content p {
+.app-tooltip-btn__content.v-app-tooltip-btn__content p {
   margin: 0;
 }
 </style>

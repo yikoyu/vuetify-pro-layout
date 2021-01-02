@@ -1,6 +1,6 @@
 <template>
   <v-list-group
-    class="v-list-group--default"
+    class="default-drawer-list-group v-list-group--default"
     v-model="model"
     v-if="show"
     :group="group"
@@ -79,7 +79,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.v-list-group.v-list-group--default {
+.default-drawer-list-group.v-list-group.v-list-group--default {
   .v-list-group__header {
     min-height: 32px;
     > .v-list-item__icon {

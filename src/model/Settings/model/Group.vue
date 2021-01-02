@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-settings-group">
     <span v-if="path" class="text-subtitle-2 font-weight-black mb-0 pl-1">{{ i18nRender(`app.setting.${path}`) }}</span>
 
     <v-item-group v-model="internalValueSync" class="mx-auto row row--dense" mandatory>
@@ -67,7 +67,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.v-card.v-card--group::before {
+.default-settings-group .v-card.v-card--group::before {
   border-radius: inherit;
 }
 </style>
