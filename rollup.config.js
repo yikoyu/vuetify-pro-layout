@@ -20,7 +20,7 @@ const config = {
       'vuetify/lib': 'Vuetify'
     }
   },
-  external: ['vue', 'vuetify/lib', '@vue/composition-api', '@mdi/js'],
+  external: ['vue', 'vuetify/lib', '@vue/composition-api'],
   plugins: [
     vue({
       css: false,
