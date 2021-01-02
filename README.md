@@ -34,7 +34,6 @@ export default return new Vuetify({
     :setting="setting"
     :collapsed="collapsed"
     :settings="settings"
-    :logoRender="logoRender"
     :i18nRender="t => $t(t)"
     @setting-change="settingChange"
     @collapsed-change="collapsedChange"
@@ -54,12 +53,11 @@ export default return new Vuetify({
 
 <script lang="ts">
 import { defineComponent, reactive } from '@vue/composition-api'
-import { logoDarkText, logoLightText, logoDefault } from '@/core/icons'
 
 import useInstall from '@/hooks/use-install'
 import { useApp, usePermission } from '@/store/hooks'
 
-import ProLayout from '@/pro-layout'
+import { ProLayout } from '@/pro-layout'
 import DefaultSettingsToggle from './components/SettingsToggle/index.vue'
 import DefaultLanguageMenu from './components/LanguageMenu/index.vue'
 import DefaultAvatarDropdown from './components/AvatarDropdown/index.vue'
@@ -88,12 +86,6 @@ export default defineComponent({
       progress: progress,
       canInstall: canInstall,
       updateAvailable: updateAvailable
-    })
-
-    const logoRender = reactive({
-      dark: logoDarkText,
-      light: logoLightText,
-      default: logoDefault
     })
 
     function collapsedChange(val: boolean) {
@@ -129,7 +121,6 @@ export default defineComponent({
       collapsed,
       menu,
       settings,
-      logoRender,
       collapsedChange,
       settingChange
     }
@@ -159,10 +150,10 @@ export default defineComponent({
 | settings@progress          | 进度条是否加载 | Boolean | 必填 |
 | settings@canInstall          | pwa是否可以安装 | Boolean | 必填 |
 | settings@updateAvailable          | pwa是否可以更新 | Boolean | 必填 |
-| logo-render | logo | Object | 必填 |
-| logo-render@dark | 深色模式logo | VNode | 必填 |
-| logo-render@light | 浅色模式logo | VNode | 必填 |
-| logo-render@default | 菜单收缩时的logo | VNode | 必填 |
+| logo-render | logo | Object | { dark: SVG, light: SVG, default: SVG } |
+| logo-render@dark | 深色模式logo | SVG | SVG |
+| logo-render@light | 浅色模式logo | SVG | SVG |
+| logo-render@default | 菜单收缩时的logo | SVG | SVG |
 | i18n-render | 本地化渲染函数 (this.$t) | Function (key: string) => string \| false | (t) => t |
 | app-bar-right | v-app右侧插槽 | v-slot | |
 | @setting-change | 设置更新事件 | ({ type, value }: { type: string, value: any }) => void |        |
