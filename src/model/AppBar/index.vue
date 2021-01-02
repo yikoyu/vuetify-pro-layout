@@ -26,6 +26,8 @@
 import { defineComponent, PropType } from '@vue/composition-api'
 import { VAppBar, VAppBarNavIcon, VImg, VProgressLinear, VSpacer } from 'vuetify/lib'
 
+import { logoDarkText, logoLightText, logoDefault } from '../../assets/icon'
+
 import DefaultNavigationBar from './NavigationBar/index.vue'
 
 import { ISettings, ILogo } from '../../index.interface'
@@ -43,7 +45,13 @@ export default defineComponent({
   props: {
     logo: {
       type: Object as PropType<ILogo>,
-      require: true
+      default: () => {
+        return {
+          dark: logoDarkText,
+          light: logoLightText,
+          default: logoDefault
+        }
+      }
     },
     menu: {
       type: Array,

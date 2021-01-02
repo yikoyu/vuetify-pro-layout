@@ -19,9 +19,11 @@
 import { ref, computed, defineComponent, ComputedRef, Ref, PropType } from '@vue/composition-api'
 import { VNavigationDrawer } from 'vuetify/lib'
 
+import { logoDarkText, logoLightText, logoDefault } from '../../assets/icon'
+
 import { DefaultDrawerList, DefaultDrawerListPrepend } from './List'
 
-import { ISettings } from '../../index.interface'
+import { ISettings, ILogo } from '../../index.interface'
 
 export default defineComponent({
   name: 'DefaultDrawer',
@@ -32,8 +34,14 @@ export default defineComponent({
   },
   props: {
     logo: {
-      type: Object,
-      require: true
+      type: Object as PropType<ILogo>,
+      default: () => {
+        return {
+          dark: logoDarkText,
+          light: logoLightText,
+          default: logoDefault
+        }
+      }
     },
     menu: {
       type: Array,

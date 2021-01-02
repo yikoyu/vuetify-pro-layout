@@ -5,7 +5,6 @@
     :setting="setting"
     :collapsed="collapsed"
     :settings="settings"
-    :logoRender="logoRender"
     :i18nRender="t => $t(t)"
     @setting-change="settingChange"
     @collapsed-change="collapsedChange"
@@ -23,7 +22,6 @@
 
 <script lang="ts">
 import { computed, defineComponent, reactive } from '@vue/composition-api'
-import { logoDarkText, logoLightText, logoDefault } from '@/core/icons'
 
 import { RouteConfig } from '@/interface'
 import { constantRouterMap } from '@/config/router.config'
@@ -66,12 +64,6 @@ export default defineComponent({
       updateAvailable: updateAvailable
     })
 
-    const logoRender = reactive({
-      dark: logoDarkText,
-      light: logoLightText,
-      default: logoDefault
-    })
-
     function collapsedChange(val: boolean) {
       collapsed.value = val
     }
@@ -105,7 +97,6 @@ export default defineComponent({
       collapsed,
       menu,
       settings,
-      logoRender,
       collapsedChange,
       settingChange
     }

@@ -12,6 +12,8 @@
 import { computed, defineComponent, PropType } from '@vue/composition-api'
 import { VToolbar, VListItem, VImg } from 'vuetify/lib'
 
+import { logoDarkText, logoLightText, logoDefault } from '../../../assets/icon'
+
 import { ISettings, ILogo } from '../../../index.interface'
 
 export default defineComponent({
@@ -20,7 +22,13 @@ export default defineComponent({
   props: {
     logo: {
       type: Object as PropType<ILogo>,
-      require: true
+      default: () => {
+        return {
+          dark: logoDarkText,
+          light: logoLightText,
+          default: logoDefault
+        }
+      }
     },
     miniVariant: {
       type: Boolean,
