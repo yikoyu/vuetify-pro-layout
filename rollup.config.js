@@ -4,6 +4,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import typescript from 'rollup-plugin-typescript'
 import resolve from 'rollup-plugin-node-resolve'
 import css from 'rollup-plugin-css-porter'
+import image from '@rollup/plugin-image'
 import minimist from 'minimist'
 
 import { terser } from 'rollup-plugin-terser'
@@ -27,6 +28,7 @@ const config = {
       compileTemplate: true
     }),
     css({ dest: 'dist/vuetify-pro-layout.css' }),
+    image(),
     resolve({
       jsnext: true,
       main: true
