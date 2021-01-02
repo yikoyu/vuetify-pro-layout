@@ -1,4 +1,4 @@
-import { VuetifyProLayoutComponent, ISettings, ILogo } from './component'
+import { VuetifyProLayoutComponent, ISettings } from './component'
 
 export declare class VuetifyDefaultSettings extends VuetifyProLayoutComponent {
   title?: string

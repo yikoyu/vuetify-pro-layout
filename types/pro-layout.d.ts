@@ -11,7 +11,7 @@ export declare class VuetifyProLayout extends VuetifyProLayoutComponent {
 
   settings: ISettings
 
-  logoRender: ILogo
+  logoRender?: ILogo
 
   i18nRender?: (t: string) => string
 

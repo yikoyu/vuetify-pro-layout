@@ -1,7 +1,7 @@
-import { VuetifyProLayoutComponent, ISettings } from './component'
+import { VuetifyProLayoutComponent, ISettings, ILogo } from './component'
 
 export declare class VuetifyDefaultDrawer extends VuetifyProLayoutComponent {
-  logo: object
+  logo?: ILogo
 
   menu?: any[]
 

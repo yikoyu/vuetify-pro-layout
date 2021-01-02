@@ -1,7 +1,7 @@
 import { VuetifyProLayoutComponent, ISettings, ILogo } from './component'
 
 export declare class VuetifyDefaultAppBar extends VuetifyProLayoutComponent {
-  logo: ILogo
+  logo?: ILogo
   
   menu?: any[]
 
