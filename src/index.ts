@@ -10,10 +10,11 @@ import AppMenu from './components/Menu/index'
 import AppNestMenu from './components/NestMenu/index'
 import AppSheet from './components/Sheet/index'
 import AppTooltipBtn from './components/TooltipBtn/index'
+import AppContextMenu from './components/ContextMenu/index'
 
 import { icons } from './vuetify/icons'
 
-const components = [ProLayout, DefaultAppBar, DefaultDrawer, DefaultSettings, PageHeaderWrapper, AppMenu, AppNestMenu, AppSheet, AppTooltipBtn]
+const components = [ProLayout, DefaultAppBar, DefaultDrawer, DefaultSettings, PageHeaderWrapper, AppMenu, AppNestMenu, AppSheet, AppTooltipBtn, AppContextMenu]
 
 const install = (Vue: VueConstructor) => {
   components.forEach(item => {
@@ -27,6 +28,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export { ProLayout, DefaultAppBar, DefaultDrawer, DefaultSettings, PageHeaderWrapper }
-export { AppMenu, AppNestMenu, AppSheet, AppTooltipBtn }
+export { AppMenu, AppNestMenu, AppSheet, AppTooltipBtn, AppContextMenu }
 export { icons as defaultIcons }
 export default install

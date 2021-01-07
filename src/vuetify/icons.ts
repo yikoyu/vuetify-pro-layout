@@ -9,7 +9,10 @@ import {
   mdiPageLayoutHeader,
   mdiPageLayoutSidebarLeft,
   mdiArrowCollapseHorizontal,
-  mdiArrowExpandHorizontal
+  mdiArrowExpandHorizontal,
+  mdiDotsVertical,
+  mdiTab,
+  mdiTabPlus
 } from '@mdi/js'
 
 export const icons = {
@@ -22,5 +25,8 @@ export const icons = {
   mdiPageLayoutHeader,
   mdiPageLayoutSidebarLeft,
   mdiArrowCollapseHorizontal,
-  mdiArrowExpandHorizontal
+  mdiArrowExpandHorizontal,
+  mdiDotsVertical,
+  mdiTab,
+  mdiTabPlus
 }

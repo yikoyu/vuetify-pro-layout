@@ -9,6 +9,7 @@ import { VuetifyAppMenu } from './app-menu'
 import { VuetifyAppNestMenu } from './app-nest-menu'
 import { VuetifyAppSheet } from './app-sheet'
 import { VuetifyAppTooltipBtn } from './app-tooltip-btn'
+import { VuetifyAppContextMenu } from './app-context-menu'
 
 interface DefaultIcons {
   [x: string]: string
@@ -35,3 +36,5 @@ export class AppNestMenu extends VuetifyAppNestMenu {}
 export class AppSheet extends VuetifyAppSheet {}
 
 export class AppTooltipBtn extends VuetifyAppTooltipBtn {}
+
+export class AppContextMenu extends VuetifyAppContextMenu {}

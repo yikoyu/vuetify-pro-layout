@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <default-app-bar :logo="logoRender" :menu="menu" :settings="settings" :collapsed="collapsed" @collapsed-change="collapsedChange">
+    <default-app-bar :i18n-render="i18nRender" :logo="logoRender" :menu="menu" :settings="settings" :collapsed="collapsed" @collapsed-change="collapsedChange">
       <template #right>
         <slot name="app-bar-right"></slot>
       </template>

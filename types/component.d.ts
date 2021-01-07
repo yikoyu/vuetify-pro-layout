@@ -11,6 +11,7 @@ export interface ISettings {
   rtl: boolean
   layout: string
   contentWidth: string
+  multiTab: boolean
   primary: string
   canInstall: boolean
   updateAvailable: boolean

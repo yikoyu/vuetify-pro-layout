@@ -59,6 +59,12 @@
         <v-divider />
       </div>
 
+      <default-settings-multi-tab :i18nRender="i18nRender" :multi-tab="settings.multiTab" @setting-change="settingChange" />
+
+      <div class="mt-4 mb-3 mx-n3">
+        <v-divider />
+      </div>
+
       <default-settings-rtl :i18nRender="i18nRender" :rtl="settings.rtl" @setting-change="settingChange" />
 
       <div class="mt-4 mb-3 mx-n3">
@@ -79,6 +85,7 @@ import {
   DefaultSettingsTheme,
   DefaultSettingsLayout,
   DefaultSettingsContentWidth,
+  DefaultSettingsMultiTab,
   DefaultSettingsRtl,
   DefaultSettingsColorPicker
 } from './model'
@@ -97,6 +104,7 @@ export default defineComponent({
     DefaultSettingsTheme,
     DefaultSettingsLayout,
     DefaultSettingsContentWidth,
+    DefaultSettingsMultiTab,
     DefaultSettingsRtl,
     DefaultSettingsColorPicker
   },

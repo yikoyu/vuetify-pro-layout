@@ -9,5 +9,7 @@ export declare class VuetifyDefaultAppBar extends VuetifyProLayoutComponent {
 
   settings: ISettings
 
+  i18nRender?: (t: string) => string
+
   'collapsed-change': (collapsed: boolean) => void
 }
