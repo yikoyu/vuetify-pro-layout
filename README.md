@@ -13,7 +13,7 @@ npm i vuetify-pro-layout -S
 import { defaultIcons } from 'vuetify-pro-layout'
 import 'vuetify-pro-layout/dist/vuetify-pro-layout.min.css' // 引入vuetify-pro-layout的css
 
-export default return new Vuetify({
+export default new Vuetify({
   icons: {
     iconfont: 'mdiSvg',
     values: {
@@ -21,6 +21,22 @@ export default return new Vuetify({
       ...defaultIcons
     }
   }
+})
+```
+
+## i18n国际化
+
+```typescript
+import VueI18n from 'vue-i18n'
+import { zhCN } from 'vuetify-pro-layout'
+import { enUS } from 'vuetify-pro-layout'
+
+new VueI18n({
+  locale: 'zh-cn',
+  messages: {
+    'zh-cn': zhCN,
+    'en': enUS,
+  },
 })
 ```
 
@@ -71,7 +87,7 @@ export default defineComponent({
     DefaultAvatarDropdown
   },
   setup(prop, ctx) {
-    const { setting, dark, mixed, system, rtl, layout, contentWidth, primary, progress, collapsed } = useApp()
+    const { setting, dark, mixed, system, rtl, layout, contentWidth, multiTab, primary, progress, collapsed } = useApp()
     const { title, canInstall, updateAvailable, promptInstaller, refreshContent } = useInstall()
     const { menu } = usePermission()
 
@@ -82,6 +98,7 @@ export default defineComponent({
       rtl: rtl,
       layout: layout,
       contentWidth: contentWidth,
+      multiTab: multiTab,
       primary: primary,
       progress: progress,
       canInstall: canInstall,
@@ -98,6 +115,8 @@ export default defineComponent({
       if (type === 'rtl') rtl.value = value as boolean
 
       if (type === 'contentWidth') contentWidth.value = value as 'fluid' | 'fixed'
+
+      if (type === 'multiTab') multiTab.value = value as boolean
 
       if (type === 'primarycolor') primary.value = value as string
 
@@ -146,6 +165,7 @@ export default defineComponent({
 | settings@rtl          | 是否开启RTL模式 | Boolean | 必填 |
 | settings@layout          | 菜单模式 | ‘side’ \| ‘top’ | 必填 |
 | settings@contentWidth          | 内容模式 | ‘fluid’ \| ‘fixed’ | 必填 |
+| settings@multiTab          | 标签模式 | Boolean | 必填 |
 | settings@primary          | 主题色 | String | 必填 |
 | settings@progress          | 进度条是否加载 | Boolean | 必填 |
 | settings@canInstall          | pwa是否可以安装 | Boolean | 必填 |
