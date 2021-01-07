@@ -3,11 +3,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, onMounted } from '@vue/composition-api'
+
+import { useApp } from '@/store/hooks'
 
 export default defineComponent({
   name: 'App',
   setup(prop, ctx) {
+    const { lang } = useApp()
+
+    onMounted(() => {
+      lang.value = lang.value
+    })
+
     return {}
   }
 })
