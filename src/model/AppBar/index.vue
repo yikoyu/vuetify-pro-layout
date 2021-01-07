@@ -9,7 +9,7 @@
   >
     <v-app-bar-nav-icon v-if="settings.layout !== 'top'" @click="collapsedChange"></v-app-bar-nav-icon>
     <v-app-bar-nav-icon v-if="settings.layout === 'top'">
-      <v-img :src="logo.default" :max-height="32" :max-width="32" />
+      <v-img :src="logo.default" :max-height="imgSize" :max-width="imgSize" />
     </v-app-bar-nav-icon>
 
     <v-progress-linear :active="settings.progress" :indeterminate="settings.progress" absolute top></v-progress-linear>
@@ -77,11 +77,17 @@ export default defineComponent({
     }
   },
   setup(prop, ctx) {
+    const imgSize = computed(() => {
+      const top = ctx.root.$vuetify.application.top
+      return prop.settings.multiTab ? top / 2 - 12 : top - 12
+    })
+
     function collapsedChange() {
       ctx.emit('collapsed-change', !prop.collapsed)
     }
 
     return {
+      imgSize,
       collapsedChange
     }
   }
