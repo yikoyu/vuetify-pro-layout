@@ -44,6 +44,13 @@ export default function useApp() {
     }
   })
 
+  const multiTab = computed({
+    get: () => store.state.app.multiTab,
+    set: (val: boolean) => {
+      store.dispatch('app/set_multi_tab', val)
+    }
+  })
+
   const dark = computed({
     get: () => store.state.app.theme.dark,
     set: (val: boolean) => {
@@ -103,6 +110,7 @@ export default function useApp() {
     rtl,
     layout,
     contentWidth,
+    multiTab,
     dark,
     mixed,
     system,

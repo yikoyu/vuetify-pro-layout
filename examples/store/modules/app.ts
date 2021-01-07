@@ -12,6 +12,7 @@ export interface IApp {
   rtl: boolean
   layout: 'side' | 'top'
   contentWidth: 'fluid' | 'fixed'
+  multiTab: boolean
   theme: {
     dark: boolean
     mixed: boolean
@@ -29,6 +30,7 @@ const state: IApp = {
   rtl: false,
   layout: 'side',
   contentWidth: 'fluid',
+  multiTab: false,
   theme: {
     dark: false,
     mixed: false,
@@ -58,6 +60,9 @@ const mutations = {
   },
   SET_CONTENT_WIDTH(state: IApp, type: 'fluid' | 'fixed'): void {
     state.contentWidth = type
+  },
+  SET_MULTI_TAB(state: IApp, type: boolean): void {
+    state.multiTab = type
   },
   SET_THEME_DARK(state: IApp, type: boolean): void {
     state.theme.dark = type
@@ -104,6 +109,9 @@ const actions = {
   set_content_width({ commit, state }: context, type: 'fluid' | 'fixed'): void {
     if (!['fluid', 'fixed'].includes(type)) return
     commit('SET_CONTENT_WIDTH', type)
+  },
+  set_multi_tab({ commit, state }: context, type: boolean): void {
+    commit('SET_MULTI_TAB', type)
   },
   set_theme_dark({ commit, state }: context, type: boolean): void {
     commit('SET_THEME_DARK', type)

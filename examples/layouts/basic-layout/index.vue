@@ -41,7 +41,7 @@ export default defineComponent({
     DefaultLanguageMenu
   },
   setup(prop, ctx) {
-    const { setting, dark, mixed, system, rtl, layout, contentWidth, primary, progress, collapsed } = useApp()
+    const { setting, dark, mixed, system, rtl, layout, contentWidth, multiTab, primary, progress, collapsed } = useApp()
     const { title, canInstall, updateAvailable, promptInstaller, refreshContent } = useInstall()
     const menu = computed(() => {
       let menus: RouteConfig[] = []
@@ -58,6 +58,7 @@ export default defineComponent({
       rtl: rtl,
       layout: layout,
       contentWidth: contentWidth,
+      multiTab: multiTab,
       primary: primary,
       progress: progress,
       canInstall: canInstall,
@@ -74,6 +75,8 @@ export default defineComponent({
       if (type === 'rtl') rtl.value = value as boolean
 
       if (type === 'contentWidth') contentWidth.value = value as 'fluid' | 'fixed'
+
+      if (type === 'multiTab') multiTab.value = value as boolean
 
       if (type === 'primarycolor') primary.value = value as string
 
