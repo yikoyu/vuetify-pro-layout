@@ -19,6 +19,10 @@ export function install (vue: typeof Vue, options: any): void
 
 export declare const defaultIcons: DefaultIcons
 
+export declare const zhCN: { [x: string]: string }
+
+export declare const enUS: { [x: string]: string }
+
 export class ProLayout extends VuetifyProLayout {}
 
 export class DefaultAppBar extends VuetifyDefaultAppBar {}
