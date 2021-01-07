@@ -25,6 +25,15 @@ const locale: { [x: string]: string } = {
   'app.setting.contentwidth': '内容宽度',
   'app.setting.contentwidth.fluid': '流式',
   'app.setting.contentwidth.fixed': '定宽',
+
+  'app.setting.multiTab': '标签',
+  'app.setting.multiTab.uni': '单标签',
+  'app.setting.multiTab.multi': '多标签',
+  'app.setting.multiTab.allClose': '关闭全部',
+  'app.setting.multiTab.closeCurrent': '关闭当前页',
+  'app.setting.multiTab.snackbar.closeend': '这是最后一个标签，无法被关闭',
+  'app.setting.multiTab.snackbar.close': '关闭',
+
   'app.setting.direction': '布局',
   'app.setting.direction.ltr': 'LTR',
   'app.setting.direction.rtl': 'RTL',
