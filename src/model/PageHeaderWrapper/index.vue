@@ -29,19 +29,21 @@
       <slot></slot>
     </v-container>
 
-    <v-toolbar v-if="$slots.toolbar" dense :style="toolbarStyle">
-      <slot name="toolbar"></slot>
-    </v-toolbar>
+    <v-expand-transition>
+      <v-toolbar v-if="$slots.toolbar" dense :style="toolbarStyle">
+        <slot name="toolbar"></slot>
+      </v-toolbar>
+    </v-expand-transition>
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, PropType, watch } from '@vue/composition-api'
-import { VSheet, VToolbar, VToolbarTitle, VBreadcrumbs, VTabs, VTab, VContainer } from 'vuetify/lib'
+import { VSheet, VToolbar, VToolbarTitle, VBreadcrumbs, VTabs, VTab, VContainer, VExpandTransition } from 'vuetify/lib'
 
 export default defineComponent({
   name: 'PageHeaderWrapper',
-  components: { VSheet, VToolbar, VToolbarTitle, VBreadcrumbs, VTabs, VTab, VContainer },
+  components: { VSheet, VToolbar, VToolbarTitle, VBreadcrumbs, VTabs, VTab, VContainer, VExpandTransition },
   props: {
     content: {
       type: String,
