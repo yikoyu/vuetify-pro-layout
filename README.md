@@ -10,18 +10,7 @@ npm i vuetify-pro-layout -S
 
 
 ```typescript
-import { defaultIcons } from 'vuetify-pro-layout'
-import 'vuetify-pro-layout/dist/vuetify-pro-layout.min.css' // 引入vuetify-pro-layout的css
-
-export default new Vuetify({
-  icons: {
-    iconfont: 'mdiSvg',
-    values: {
-      // 引入使用的图标
-      ...defaultIcons
-    }
-  }
-})
+import 'vuetify-pro-layout/dist/vuetify-pro-layout.min.css' // main.ts引入vuetify-pro-layout的css
 ```
 
 ## i18n国际化
