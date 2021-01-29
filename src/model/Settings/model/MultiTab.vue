@@ -7,6 +7,8 @@ import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api
 
 import DefaultSettingsGroup from './Group.vue'
 
+import { mdiTabPlus, mdiTab } from '../../../vuetify/icons'
+
 export default defineComponent({
   name: 'DefaultSettingsMultiTab',
   components: { DefaultSettingsGroup },
@@ -26,11 +28,11 @@ export default defineComponent({
     const items = computed(() => [
       {
         text: 'multi',
-        icon: '$mdiTabPlus'
+        icon: mdiTabPlus
       },
       {
         text: 'uni',
-        icon: '$mdiTab'
+        icon: mdiTab
       }
     ])
 

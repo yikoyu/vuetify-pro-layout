@@ -7,6 +7,8 @@ import { computed, defineComponent, onMounted, Ref, ref, watch } from '@vue/comp
 
 import DefaultSettingsGroup from './Group.vue'
 
+import { mdiWhiteBalanceSunny, mdiWeatherNight, mdiDesktopTowerMonitor } from '../../../vuetify/icons'
+
 const IN_BROWSER = typeof window !== 'undefined'
 
 export default defineComponent({
@@ -36,17 +38,17 @@ export default defineComponent({
     const items = computed(() => [
       {
         text: 'light',
-        icon: '$mdiWhiteBalanceSunny',
+        icon: mdiWhiteBalanceSunny,
         cb: () => setTheme()
       },
       {
         text: 'dark',
-        icon: '$mdiWeatherNight',
+        icon: mdiWeatherNight,
         cb: () => setTheme(true)
       },
       {
         text: 'system',
-        icon: '$mdiDesktopTowerMonitor',
+        icon: mdiDesktopTowerMonitor,
         cb: () => setSystemTheme()
       }
       // {

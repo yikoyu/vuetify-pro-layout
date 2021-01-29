@@ -7,6 +7,8 @@ import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api
 
 import DefaultSettingsGroup from './Group.vue'
 
+import { mdiPageLayoutSidebarLeft, mdiPageLayoutHeader } from '../../../vuetify/icons'
+
 export default defineComponent({
   name: 'DefaultSettingsLayout',
   components: { DefaultSettingsGroup },
@@ -26,11 +28,11 @@ export default defineComponent({
     const items = computed(() => [
       {
         text: 'side',
-        icon: '$mdiPageLayoutSidebarLeft'
+        icon: mdiPageLayoutSidebarLeft
       },
       {
         text: 'top',
-        icon: '$mdiPageLayoutHeader'
+        icon: mdiPageLayoutHeader
       }
     ])
 

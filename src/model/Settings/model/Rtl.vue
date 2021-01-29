@@ -7,6 +7,8 @@ import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api
 
 import DefaultSettingsGroup from './Group.vue'
 
+import { mdiFormatTextdirectionLToR, mdiFormatTextdirectionRToL } from '../../../vuetify/icons'
+
 export default defineComponent({
   name: 'DefaultSettingsRtl',
   components: { DefaultSettingsGroup },
@@ -26,11 +28,11 @@ export default defineComponent({
     const items = computed(() => [
       {
         text: 'ltr',
-        icon: '$mdiFormatTextdirectionLToR'
+        icon: mdiFormatTextdirectionLToR
       },
       {
         text: 'rtl',
-        icon: '$mdiFormatTextdirectionRToL'
+        icon: mdiFormatTextdirectionRToL
       }
     ])
 

@@ -21,7 +21,7 @@
     <v-menu open-on-hover>
       <template v-slot:activator="{ on, attrs }">
         <v-btn icon small v-bind="attrs" v-on="on" style="position: absolute;" :style="[{ [`${$vuetify.rtl ? 'left' : 'right'}`]: 0 }]">
-          <v-icon>$mdiDotsVertical</v-icon>
+          <v-icon>{{ mdiDotsVertical }}</v-icon>
         </v-btn>
       </template>
 
@@ -50,6 +50,8 @@ import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api
 
 import { VBtn, VSpacer, VChipGroup, VChip, VIcon, VMenu, VSnackbar, VSlideXReverseTransition, VHover } from 'vuetify/lib'
 import { AppContextMenu } from '../../../components'
+
+import { mdiDotsVertical } from '../../../vuetify/icons'
 
 import { Route } from 'vue-router'
 
@@ -128,6 +130,7 @@ export default defineComponent({
     )
 
     return {
+      mdiDotsVertical,
       snackbar,
       pages,
       routePath,

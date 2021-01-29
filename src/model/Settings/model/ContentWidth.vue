@@ -7,6 +7,8 @@ import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api
 
 import DefaultSettingsGroup from './Group.vue'
 
+import { mdiArrowCollapseHorizontal, mdiArrowExpandHorizontal } from '../../../vuetify/icons'
+
 export default defineComponent({
   name: 'DefaultSettingsContentWidth',
   components: { DefaultSettingsGroup },
@@ -30,11 +32,11 @@ export default defineComponent({
     const items = computed(() => [
       {
         text: 'fluid',
-        icon: '$mdiArrowCollapseHorizontal'
+        icon: mdiArrowCollapseHorizontal
       },
       {
         text: 'fixed',
-        icon: '$mdiArrowExpandHorizontal',
+        icon: mdiArrowExpandHorizontal,
         disabled: prop.layout === 'side'
       }
     ])

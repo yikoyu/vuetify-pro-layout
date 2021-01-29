@@ -3,7 +3,7 @@
     <template v-slot:activator="{ on }">
       <v-list-item :dense="dense" v-if="isSubMenu" v-on="on">
         <v-list-item-title>{{ menuItems.meta.title }}</v-list-item-title>
-        <v-icon right>$mdiMenuRight</v-icon>
+        <v-icon right>{{ mdiMenuRight }}</v-icon>
       </v-list-item>
       <v-btn
         depressed
@@ -51,6 +51,8 @@
 import { defineComponent, Ref, ref, computed, PropType } from '@vue/composition-api'
 import { VMenu, VList, VListItem, VListItemTitle, VIcon, VBtn } from 'vuetify/lib'
 
+import { mdiMenuRight } from '../../vuetify/icons'
+
 export default defineComponent({
   name: 'AppNestMenu',
   components: {
@@ -84,6 +86,7 @@ export default defineComponent({
     }
 
     return {
+      mdiMenuRight,
       visible,
       emitClickEvent,
 
