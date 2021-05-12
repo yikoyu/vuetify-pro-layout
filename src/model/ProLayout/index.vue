@@ -17,8 +17,8 @@
 
     <default-settings :i18n-render="i18nRender" :title="title" :setting="setting" :settings="settings" @setting-change="settingChange" />
 
-    <v-main>
-      <v-container :fluid="settings.contentWidth === 'fluid'" class="pa-0" style="height: 100%;">
+    <v-main :class="[settings.dark ? '' : 'grey lighten-5']">
+      <v-container :fluid="settings.contentWidth === 'fluid'" class="pa-0">
         <slot></slot>
       </v-container>
     </v-main>

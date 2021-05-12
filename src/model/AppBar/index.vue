@@ -1,12 +1,5 @@
 <template>
-  <v-app-bar
-    id="default-app-bar"
-    :elevation="1"
-    app
-    dense
-    :color="settings.dark ? undefined : 'white'"
-    v-bind="{ [`clipped-${settings.rtl ? 'left' : 'right'}`]: true }"
-  >
+  <v-app-bar id="default-app-bar" app dense :color="settings.dark ? undefined : 'white'" v-bind="{ [`clipped-${settings.rtl ? 'left' : 'right'}`]: true }">
     <v-app-bar-nav-icon v-if="settings.layout !== 'top'" @click="collapsedChange"></v-app-bar-nav-icon>
     <v-app-bar-nav-icon v-if="settings.layout === 'top'">
       <v-img :src="logo.default" :max-height="imgSize" :max-width="imgSize" />

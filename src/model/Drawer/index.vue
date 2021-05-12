@@ -1,5 +1,6 @@
 <template>
   <v-navigation-drawer
+    class="elevation-1"
     app
     :color="settings.dark ? '#272727' : undefined"
     :right="settings.rtl"
