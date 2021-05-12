@@ -1,20 +1,23 @@
 <template>
   <div class="default-multi-tab elevation-1">
-    <v-chip-group v-model="routePath" mandatory active-class="primary--text">
-      <v-slide-x-reverse-transition group>
-        <v-hover v-slot="{ hover }" v-for="item in pages" :key="item.fullPath">
-          <v-chip
-            label
-            :close="item.fullPath === routePath ? pages.length > 1 : hover"
-            :value="item.fullPath"
-            @click:close="remove(item.fullPath)"
+    <v-tabs v-model="routePath" ref="tabsRef">
+      <v-hover v-slot="{ hover }" v-for="item in pages" :key="item.fullPath">
+        <v-slide-x-reverse-transition @after-leave="$refs.tabsRef.onResize()">
+          <v-tab
+            :to="item.fullPath"
+            style="transition: all 0.3s"
+            :style="{ background: $vuetify.theme.dark ? undefined : hover ? '#E0E0E0' : '#FAFAFA' }"
+            :active-class="$vuetify.theme.dark ? undefined : 'white'"
             @contextmenu.prevent.native="$refs.contextmenu.openMenu($event, $el)"
           >
-            {{ item.meta.title }}
-          </v-chip>
-        </v-hover>
-      </v-slide-x-reverse-transition>
-    </v-chip-group>
+            <template>{{ item.meta.title }}</template>
+            <v-icon v-if="pages.length > 1" small v-bind="{ [`${$vuetify.rtl ? 'left' : 'right'}`]: true }" @click.prevent.stop="remove(item.fullPath)">
+              $close
+            </v-icon>
+          </v-tab>
+        </v-slide-x-reverse-transition>
+      </v-hover>
+    </v-tabs>
 
     <v-spacer></v-spacer>
 
@@ -48,7 +51,7 @@
 <script lang="ts">
 import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api'
 
-import { VBtn, VSpacer, VChipGroup, VChip, VIcon, VMenu, VSnackbar, VSlideXReverseTransition, VHover } from 'vuetify/lib'
+import { VBtn, VSpacer, VChipGroup, VChip, VIcon, VMenu, VSnackbar, VSlideXReverseTransition, VHover, VTabs, VTab } from 'vuetify/lib'
 import { AppContextMenu } from '../../../components'
 
 import { mdiDotsVertical } from '../../../vuetify/icons'
@@ -67,7 +70,9 @@ export default defineComponent({
     VMenu,
     VSnackbar,
     VSlideXReverseTransition,
-    VHover
+    VHover,
+    VTabs,
+    VTab
   },
   props: {
     i18nRender: {
