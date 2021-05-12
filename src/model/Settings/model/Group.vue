@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, Ref, PropType } from '@vue/composition-api'
+import { defineComponent, computed, PropType } from '@vue/composition-api'
 import { VItemGroup, VItem, VCol, VCard, VIcon } from 'vuetify/lib'
 
 export default defineComponent({

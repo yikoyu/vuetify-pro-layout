@@ -3,11 +3,11 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api'
+import { computed, defineComponent, Ref, ref } from '@vue/composition-api'
 
 import DefaultSettingsGroup from './Group.vue'
 
-import { mdiTabPlus, mdiTab } from '../../../vuetify/icons'
+import { mdiTabPlus, mdiTab } from 'vuetify-pro-layout/vuetify/icons'
 
 export default defineComponent({
   name: 'DefaultSettingsMultiTab',

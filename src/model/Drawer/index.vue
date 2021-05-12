@@ -9,7 +9,7 @@
     @input="collapsedChange"
   >
     <template #prepend>
-      <default-drawer-list-prepend :logo="logo" :settings="settings" :miniVariant="miniVariant" />
+      <default-drawer-list-prepend :miniVariant="miniVariant" />
     </template>
 
     <default-drawer-list :items="menu" />
@@ -17,14 +17,12 @@
 </template>
 
 <script lang="ts">
-import { ref, computed, defineComponent, ComputedRef, Ref, PropType } from '@vue/composition-api'
+import { computed, defineComponent } from '@vue/composition-api'
 import { VNavigationDrawer } from 'vuetify/lib'
-
-import { logoDarkText, logoLightText, logoDefault } from '../../assets/icon'
 
 import { DefaultDrawerList, DefaultDrawerListPrepend } from './List'
 
-import { ISettings, ILogo } from '../../index.interface'
+import { useInject } from 'vuetify-pro-layout/hooks'
 
 export default defineComponent({
   name: 'DefaultDrawer',
@@ -33,40 +31,18 @@ export default defineComponent({
     DefaultDrawerList,
     DefaultDrawerListPrepend
   },
-  props: {
-    logo: {
-      type: Object as PropType<ILogo>,
-      default: () => {
-        return {
-          dark: logoDarkText,
-          light: logoLightText,
-          default: logoDefault
-        }
-      }
-    },
-    menu: {
-      type: Array,
-      default: []
-    },
-    collapsed: {
-      type: Boolean,
-      require: true
-    },
-    settings: {
-      type: Object as PropType<ISettings>,
-      require: true
-    }
-  },
   setup(prop, ctx) {
+    const inject = useInject()
+
     const miniVariant = computed({
-      get: () => (ctx.root.$vuetify.breakpoint.mobile ? false : !prop.collapsed),
+      get: () => (ctx.root.$vuetify.breakpoint.mobile ? false : !inject.collapsed.value),
       set: (val: boolean) => {
         ctx.emit('collapsed-change', !val)
       }
     })
 
     const miniCollapsed = computed(() => {
-      return ctx.root.$vuetify.breakpoint.mobile ? prop.collapsed : true
+      return ctx.root.$vuetify.breakpoint.mobile ? inject.collapsed.value : true
     })
 
     function collapsedChange(val) {
@@ -74,6 +50,8 @@ export default defineComponent({
     }
 
     return {
+      ...inject,
+
       miniVariant,
       miniCollapsed,
       collapsedChange

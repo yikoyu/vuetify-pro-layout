@@ -52,11 +52,13 @@
 import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api'
 
 import { VBtn, VSpacer, VChipGroup, VChip, VIcon, VMenu, VSnackbar, VSlideXReverseTransition, VHover, VTabs, VTab } from 'vuetify/lib'
-import { AppContextMenu } from '../../../components'
+import { AppContextMenu } from 'vuetify-pro-layout/components'
 
-import { mdiDotsVertical } from '../../../vuetify/icons'
+import { mdiDotsVertical } from 'vuetify-pro-layout/vuetify/icons'
 
 import { Route } from 'vue-router'
+
+import { useInject } from 'vuetify-pro-layout/hooks'
 
 export default defineComponent({
   name: 'DefaultMultiTab',
@@ -74,13 +76,9 @@ export default defineComponent({
     VTabs,
     VTab
   },
-  props: {
-    i18nRender: {
-      type: Function,
-      default: t => t
-    }
-  },
   setup(prop, ctx) {
+    const inject = useInject()
+
     const snackbar = ref(false)
     const fullPathList: Ref<string[]> = ref([])
     const pages: Ref<Route[]> = ref([])
@@ -92,8 +90,8 @@ export default defineComponent({
     })
 
     const menuList = computed(() => [
-      { title: prop.i18nRender('app.setting.multiTab.allClose'), function: () => closeAll() },
-      { title: prop.i18nRender('app.setting.multiTab.closeCurrent'), function: () => closeThat() }
+      { title: inject.i18nRender('app.setting.multiTab.allClose'), function: () => closeAll() },
+      { title: inject.i18nRender('app.setting.multiTab.closeCurrent'), function: () => closeThat() }
     ])
 
     function selectedLastPath() {
@@ -135,6 +133,7 @@ export default defineComponent({
     )
 
     return {
+      ...inject,
       mdiDotsVertical,
       snackbar,
       pages,

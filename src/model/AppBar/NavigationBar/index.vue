@@ -5,22 +5,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, Ref, ref, onMounted, nextTick, PropType } from '@vue/composition-api'
+import { defineComponent, Ref, ref, onMounted, nextTick } from '@vue/composition-api'
 import elementResizeDetectorMaker from 'element-resize-detector'
-import { deepCopy } from '../../../utils'
+import { deepCopy } from 'vuetify-pro-layout/utils'
 
-import { AppNestMenu } from '../../../components'
+import { AppNestMenu } from 'vuetify-pro-layout/components'
+
+import { useInject } from 'vuetify-pro-layout/hooks'
 
 export default defineComponent({
   name: 'DefaultNavigationBar',
   components: { AppNestMenu },
-  props: {
-    menu: {
-      type: Array as PropType<any[]>,
-      default: () => []
-    }
-  },
   setup(prop, ctx) {
+    const inject = useInject()
+
     const nestMenu: Ref = ref(null)
     const maxLenDom: Ref<number[]> = ref([])
 
@@ -58,8 +56,8 @@ export default defineComponent({
             }
           }
 
-          const list = prop.menu.filter(item => !item.hidden).slice(0, i)
-          const ohList = prop.menu.filter(item => !item.hidden).slice(i, prop.menu.length)
+          const list = inject.menu.value.filter(item => !item.hidden).slice(0, i)
+          const ohList = inject.menu.value.filter(item => !item.hidden).slice(i, inject.menu.value.length)
           const ret = [...list, { name: '...', meta: { title: '...' }, children: ohList }]
 
           if (ohList.length === 0) resolve(deepCopy(list))
@@ -68,7 +66,7 @@ export default defineComponent({
       })
     }
 
-    const autoMenuItems: Ref = ref(prop.menu)
+    const autoMenuItems: Ref = ref(inject.menu.value)
 
     return {
       nestMenu,

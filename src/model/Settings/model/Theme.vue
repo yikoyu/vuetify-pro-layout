@@ -3,11 +3,11 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, Ref, ref, watch } from '@vue/composition-api'
+import { computed, defineComponent, onMounted, Ref, ref } from '@vue/composition-api'
 
 import DefaultSettingsGroup from './Group.vue'
 
-import { mdiWhiteBalanceSunny, mdiWeatherNight, mdiDesktopTowerMonitor } from '../../../vuetify/icons'
+import { mdiWhiteBalanceSunny, mdiWeatherNight, mdiDesktopTowerMonitor } from 'vuetify-pro-layout/vuetify/icons'
 
 const IN_BROWSER = typeof window !== 'undefined'
 

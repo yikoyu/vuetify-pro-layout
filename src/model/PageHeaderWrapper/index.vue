@@ -1,5 +1,5 @@
 <template>
-  <div id="page-header-wrapper">
+  <div id="page-header-wrapper" class="fill-height">
     <v-toolbar class="ma-2 mb-0" rounded dense height="auto" v-bind="$attrs" v-on="$listeners">
       <div class="d-flex flex-column mb-4" style="width: 100%;">
         <v-breadcrumbs class="px-0 py-2" :items="matchRoute"></v-breadcrumbs>

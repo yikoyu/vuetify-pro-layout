@@ -33,7 +33,7 @@ import { defineComponent } from '@vue/composition-api'
 import { VMenu } from 'vuetify/lib'
 
 import AppSheet from '../Sheet/index.vue'
-import DefaultList from '../../model/Drawer/List/index.vue'
+import DefaultList from 'vuetify-pro-layout/model/Drawer/List/index.vue'
 export default defineComponent({
   name: 'AppMenu',
   components: {

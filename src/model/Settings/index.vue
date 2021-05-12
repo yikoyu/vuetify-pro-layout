@@ -77,7 +77,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, Ref, ref, PropType } from '@vue/composition-api'
+import { computed, defineComponent, PropType } from '@vue/composition-api'
 import { VNavigationDrawer, VDivider, VContainer, VBtn, VIcon } from 'vuetify/lib'
 
 import {
@@ -90,7 +90,7 @@ import {
   DefaultSettingsColorPicker
 } from './model'
 
-import { ISettings } from '../../index.interface'
+import { ISettings } from 'vuetify-pro-layout/index.interface'
 
 export default defineComponent({
   name: 'DefaultSettings',

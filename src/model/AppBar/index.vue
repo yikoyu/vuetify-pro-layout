@@ -7,28 +7,26 @@
 
     <v-progress-linear :active="settings.progress" :indeterminate="settings.progress" absolute top></v-progress-linear>
 
-    <default-navigation-bar v-if="settings.layout === 'top'" :menu="menu" />
+    <default-navigation-bar v-if="settings.layout === 'top'" />
 
     <v-spacer></v-spacer>
 
     <slot name="right"></slot>
 
     <template #extension v-if="settings.multiTab">
-      <default-multi-tab :i18n-render="i18nRender" />
+      <default-multi-tab />
     </template>
   </v-app-bar>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed } from '@vue/composition-api'
+import { defineComponent, computed } from '@vue/composition-api'
 import { VAppBar, VAppBarNavIcon, VImg, VProgressLinear, VSpacer } from 'vuetify/lib'
-
-import { logoDarkText, logoLightText, logoDefault } from '../../assets/icon'
 
 import DefaultNavigationBar from './NavigationBar/index.vue'
 import DefaultMultiTab from './MultiTab/index.vue'
 
-import { ISettings, ILogo } from '../../index.interface'
+import { useInject } from 'vuetify-pro-layout/hooks'
 
 export default defineComponent({
   name: 'DefaultAppBar',
@@ -41,45 +39,21 @@ export default defineComponent({
     DefaultNavigationBar,
     DefaultMultiTab
   },
-  props: {
-    logo: {
-      type: Object as PropType<ILogo>,
-      default: () => {
-        return {
-          dark: logoDarkText,
-          light: logoLightText,
-          default: logoDefault
-        }
-      }
-    },
-    menu: {
-      type: Array,
-      default: []
-    },
-    collapsed: {
-      type: Boolean,
-      require: true
-    },
-    settings: {
-      type: Object as PropType<ISettings>,
-      require: true
-    },
-    i18nRender: {
-      type: Function,
-      default: t => t
-    }
-  },
   setup(prop, ctx) {
+    const inject = useInject()
+
     const imgSize = computed(() => {
       const top = ctx.root.$vuetify.application.top
-      return prop.settings.multiTab ? top / 2 - 12 : top - 12
+      return inject.settings.value.multiTab ? top / 2 - 12 : top - 12
     })
 
     function collapsedChange() {
-      ctx.emit('collapsed-change', !prop.collapsed)
+      ctx.emit('collapsed-change', !inject.collapsed.value)
     }
 
     return {
+      ...inject,
+
       imgSize,
       collapsedChange
     }

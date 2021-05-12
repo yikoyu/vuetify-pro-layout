@@ -3,11 +3,11 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, Ref, ref, watch } from '@vue/composition-api'
+import { computed, defineComponent, Ref, ref } from '@vue/composition-api'
 
 import DefaultSettingsGroup from './Group.vue'
 
-import { mdiFormatTextdirectionLToR, mdiFormatTextdirectionRToL } from '../../../vuetify/icons'
+import { mdiFormatTextdirectionLToR, mdiFormatTextdirectionRToL } from 'vuetify-pro-layout/vuetify/icons'
 
 export default defineComponent({
   name: 'DefaultSettingsRtl',

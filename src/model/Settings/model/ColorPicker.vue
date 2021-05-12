@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, Ref, watch, onMounted, computed } from '@vue/composition-api'
+import { defineComponent, ref, Ref, computed } from '@vue/composition-api'
 import { VColorPicker } from 'vuetify/lib'
 
 import DefaultSettingsGroup from './Group.vue'

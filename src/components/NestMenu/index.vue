@@ -48,10 +48,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, Ref, ref, computed, PropType } from '@vue/composition-api'
+import { defineComponent, Ref, ref } from '@vue/composition-api'
 import { VMenu, VList, VListItem, VListItemTitle, VIcon, VBtn } from 'vuetify/lib'
 
-import { mdiMenuRight } from '../../vuetify/icons'
+import { mdiMenuRight } from 'vuetify-pro-layout/vuetify/icons'
 
 export default defineComponent({
   name: 'AppNestMenu',
