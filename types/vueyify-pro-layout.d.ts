@@ -1,8 +1,6 @@
 import Vue from 'vue'
 
 import { VuetifyProLayout } from './pro-layout'
-import { VuetifyDefaultAppBar } from './default-app-bar'
-import { VuetifyDefaultDrawer } from './default-drawer'
 import { VuetifyPageHeaderWrapper } from './page-header-wrapper'
 import { VuetifyDefaultSettings } from './default-settings'
 import { VuetifyAppMenu } from './app-menu'
@@ -24,10 +22,6 @@ export declare const zhCN: { [x: string]: string }
 export declare const enUS: { [x: string]: string }
 
 export class ProLayout extends VuetifyProLayout {}
-
-export class DefaultAppBar extends VuetifyDefaultAppBar {}
-
-export class DefaultDrawer extends VuetifyDefaultDrawer {}
 
 export class PageHeaderWrapper extends VuetifyPageHeaderWrapper {}
 

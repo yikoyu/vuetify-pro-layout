@@ -1,8 +1,6 @@
 import { VueConstructor } from 'vue'
 
 import ProLayout from './model/ProLayout/index'
-import DefaultAppBar from './model/AppBar/index'
-import DefaultDrawer from './model/Drawer/index'
 import DefaultSettings from './model/Settings/index'
 import PageHeaderWrapper from './model/PageHeaderWrapper/index'
 
@@ -17,7 +15,7 @@ import enUS from './lang/en-US'
 
 import { icons } from './vuetify/icons'
 
-const components = [ProLayout, DefaultAppBar, DefaultDrawer, DefaultSettings, PageHeaderWrapper, AppMenu, AppNestMenu, AppSheet, AppTooltipBtn, AppContextMenu]
+const components = [ProLayout, DefaultSettings, PageHeaderWrapper, AppMenu, AppNestMenu, AppSheet, AppTooltipBtn, AppContextMenu]
 
 const install = (Vue: VueConstructor) => {
   components.forEach(item => {
@@ -30,7 +28,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export { ProLayout, DefaultAppBar, DefaultDrawer, DefaultSettings, PageHeaderWrapper }
+export { ProLayout, DefaultSettings, PageHeaderWrapper }
 export { AppMenu, AppNestMenu, AppSheet, AppTooltipBtn, AppContextMenu }
 export { icons as defaultIcons }
 export { zhCN, enUS }
