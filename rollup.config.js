@@ -1,8 +1,8 @@
 import vue from 'rollup-plugin-vue'
-import buble from 'rollup-plugin-buble'
-import commonjs from 'rollup-plugin-commonjs'
-import typescript from 'rollup-plugin-typescript'
-import resolve from 'rollup-plugin-node-resolve'
+import buble from '@rollup/plugin-buble'
+import commonjs from '@rollup/plugin-commonjs'
+import typescript from 'rollup-plugin-typescript2'
+import resolve from '@rollup/plugin-node-resolve'
 import css from 'rollup-plugin-css-porter'
 import image from '@rollup/plugin-image'
 import minimist from 'minimist'
@@ -18,7 +18,8 @@ const config = {
     exports: 'named',
     globals: {
       vue: 'Vue',
-      'vuetify/lib': 'Vuetify'
+      'vuetify/lib': 'Vuetify',
+      '@vue/composition-api': 'VueCompositionAPI'
     }
   },
   external: ['vue', 'vuetify/lib', '@vue/composition-api'],
@@ -29,15 +30,11 @@ const config = {
     }),
     css({ dest: 'dist/vuetify-pro-layout.css' }),
     image(),
-    resolve({
-      jsnext: true,
-      main: true
-    }),
+    resolve(),
     commonjs(),
     typescript(),
     buble({
-      objectAssign: 'Object.assign',
-      transforms: { asyncAwait: false }
+      objectAssign: 'Object.assign'
     })
   ]
 }
