@@ -12,7 +12,6 @@ export interface ISettings {
 }
 
 export interface ILogo {
-  dark: any
-  light: any
-  default: any
+  image: any
+  text?: string
 }

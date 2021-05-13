@@ -1,22 +1,25 @@
 <template>
   <v-toolbar flat dense>
-    <v-list-item class="pa-0 mx-n1">
-      <router-link :to="{ name: 'index' }">
-        <v-img :src="logoRender" alt="logo" class="shrink" :max-height="$vuetify.application.top" :max-width="logoWidth" contain />
-      </router-link>
+    <v-list-item class="pa-0 mx-n1 fill-height" :ripple="false" link @click="$router.push({ name: 'index' })">
+      <v-list-item-avatar tile size="32">
+        <v-img :src="logo.image" alt="logo" />
+      </v-list-item-avatar>
+      <v-list-item-content v-if="!settings.miniVariant">
+        <v-list-item-title class="text-h4 text-truncate" v-text="logo.text"></v-list-item-title>
+      </v-list-item-content>
     </v-list-item>
   </v-toolbar>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent } from '@vue/composition-api'
-import { VToolbar, VListItem, VImg } from 'vuetify/lib'
+import { defineComponent } from '@vue/composition-api'
+import { VToolbar, VListItem, VListItemAvatar, VListItemContent, VListItemTitle, VImg } from 'vuetify/lib'
 
 import { useInject } from 'vuetify-pro-layout/hooks'
 
 export default defineComponent({
   name: 'DefaultDrawerListPrepend',
-  components: { VToolbar, VListItem, VImg },
+  components: { VToolbar, VListItem, VListItemAvatar, VListItemContent, VListItemTitle, VImg },
   props: {
     miniVariant: {
       type: Boolean,
@@ -26,16 +29,9 @@ export default defineComponent({
   setup(prop, ctx) {
     const { logo, settings } = useInject()
 
-    const logoRender = computed(() => {
-      if (prop.miniVariant) return logo.value?.default
-      return settings.value?.dark ? logo.value?.dark : logo.value?.light
-    })
-
-    const logoWidth = computed(() => (prop.miniVariant ? 32 : 124))
-
     return {
-      logoRender,
-      logoWidth
+      logo,
+      settings
     }
   }
 })

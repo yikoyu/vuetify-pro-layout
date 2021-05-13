@@ -1,8 +1,10 @@
 <template>
   <v-app-bar id="default-app-bar" app dense :color="settings.dark ? undefined : 'white'" v-bind="{ [`clipped-${settings.rtl ? 'left' : 'right'}`]: true }">
     <v-app-bar-nav-icon v-if="settings.layout !== 'top'" @click="collapsedChange"></v-app-bar-nav-icon>
-    <v-app-bar-nav-icon v-if="settings.layout === 'top'">
-      <v-img :src="logo.default" :max-height="imgSize" :max-width="imgSize" />
+    <v-app-bar-nav-icon v-if="settings.layout === 'top'" @click="$router.push({ name: 'index' })">
+      <v-avatar tile size="32">
+        <v-img :src="logo.image" alt="logo" />
+      </v-avatar>
     </v-app-bar-nav-icon>
 
     <v-progress-linear :active="settings.progress" :indeterminate="settings.progress" absolute top></v-progress-linear>
@@ -21,7 +23,7 @@
 
 <script lang="ts">
 import { defineComponent, computed } from '@vue/composition-api'
-import { VAppBar, VAppBarNavIcon, VImg, VProgressLinear, VSpacer } from 'vuetify/lib'
+import { VAppBar, VAppBarNavIcon, VAvatar, VImg, VProgressLinear, VSpacer } from 'vuetify/lib'
 
 import DefaultNavigationBar from './NavigationBar/index.vue'
 import DefaultMultiTab from './MultiTab/index.vue'
@@ -33,6 +35,7 @@ export default defineComponent({
   components: {
     VAppBar,
     VAppBarNavIcon,
+    VAvatar,
     VImg,
     VProgressLinear,
     VSpacer,

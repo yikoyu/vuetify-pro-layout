@@ -22,7 +22,7 @@
 import { defineComponent, PropType } from '@vue/composition-api'
 import { VApp, VMain, VContainer } from 'vuetify/lib'
 
-import { logoDarkText, logoLightText, logoDefault } from 'vuetify-pro-layout/assets/icon'
+import { logoDefault } from 'vuetify-pro-layout/assets/icon'
 
 import DefaultAppBar from '../AppBar/index.vue'
 import DefaultDrawer from '../Drawer/index.vue'
@@ -67,9 +67,8 @@ export default defineComponent({
       type: Object as PropType<ILogo>,
       default: () => {
         return {
-          dark: logoDarkText,
-          light: logoLightText,
-          default: logoDefault
+          image: logoDefault,
+          text: 'vuetify'
         }
       }
     },
