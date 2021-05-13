@@ -2,11 +2,10 @@
   <v-navigation-drawer
     class="elevation-1"
     app
+    :expand-on-hover="miniVariant"
     :color="settings.dark ? '#272727' : undefined"
     :right="settings.rtl"
-    :mini-variant.sync="miniVariant"
-    :value="miniCollapsed"
-    @input="collapsedChange"
+    v-model="drawerCollapsed"
   >
     <template #prepend>
       <default-drawer-list-prepend :miniVariant="miniVariant" />
@@ -34,27 +33,22 @@ export default defineComponent({
   setup(prop, ctx) {
     const inject = useInject()
 
-    const miniVariant = computed({
-      get: () => (ctx.root.$vuetify.breakpoint.mobile ? false : !inject.collapsed.value),
+    const miniVariant = computed(() => {
+      return ctx.root.$vuetify.breakpoint.mobile ? false : !inject.collapsed.value
+    })
+
+    const drawerCollapsed = computed({
+      get: () => (ctx.root.$vuetify.breakpoint.mobile ? inject.collapsed.value : true),
       set: (val: boolean) => {
-        ctx.emit('collapsed-change', !val)
+        ctx.emit('collapsed-change', val)
       }
     })
-
-    const miniCollapsed = computed(() => {
-      return ctx.root.$vuetify.breakpoint.mobile ? inject.collapsed.value : true
-    })
-
-    function collapsedChange(val) {
-      ctx.emit('collapsed-change', val)
-    }
 
     return {
       ...inject,
 
       miniVariant,
-      miniCollapsed,
-      collapsedChange
+      drawerCollapsed
     }
   }
 })
