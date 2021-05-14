@@ -6,12 +6,12 @@
           <v-tab
             :to="item.fullPath"
             style="transition: all 0.3s"
-            :style="{ background: $vuetify.theme.dark ? undefined : hover ? '#E0E0E0' : '#FAFAFA' }"
-            :active-class="$vuetify.theme.dark ? undefined : 'white'"
+            :style="{ background: settings.dark ? undefined : hover ? '#E0E0E0' : '#FAFAFA' }"
+            :active-class="settings.dark ? undefined : 'white'"
             @contextmenu.prevent.native="$refs.contextmenu.openMenu($event, $el)"
           >
             <template>{{ item.meta.title }}</template>
-            <v-icon v-if="pages.length > 1" small v-bind="{ [`${$vuetify.rtl ? 'left' : 'right'}`]: true }" @click.prevent.stop="remove(item.fullPath)">
+            <v-icon v-if="pages.length > 1" small v-bind="{ [`${settings.rtl ? 'left' : 'right'}`]: true }" @click.prevent.stop="remove(item.fullPath)">
               $close
             </v-icon>
           </v-tab>
@@ -23,7 +23,7 @@
 
     <v-menu open-on-hover>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn icon small v-bind="attrs" v-on="on" style="position: absolute;" :style="[{ [`${$vuetify.rtl ? 'left' : 'right'}`]: 0 }]">
+        <v-btn icon small v-bind="attrs" v-on="on" style="position: absolute;" :style="[{ [`${settings.rtl ? 'left' : 'right'}`]: 0 }]">
           <v-icon>{{ mdiDotsVertical }}</v-icon>
         </v-btn>
       </template>
