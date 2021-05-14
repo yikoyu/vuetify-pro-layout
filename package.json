@@ -26,7 +26,8 @@
     "build:umd": "rollup --config rollup.config.js --format umd --file dist/vuetify-pro-layout.umd.js",
     "build:es": "rollup --config rollup.config.js --format es --file dist/vuetify-pro-layout.esm.js",
     "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/vuetify-pro-layout.min.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:nofix": "vue-cli-service lint --no-fix"
   },
   "keywords": [
     "vue",
@@ -48,8 +49,8 @@
     "@types/core-js": "^2.5.4",
     "@types/element-resize-detector": "^1.1.2",
     "@types/moment": "^2.13.0",
-    "@typescript-eslint/eslint-plugin": "^2.33.0",
-    "@typescript-eslint/parser": "^2.33.0",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
