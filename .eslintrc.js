@@ -35,7 +35,7 @@ module.exports = {
     'no-var': 'error', // 禁止使用 var
     'no-unused-vars': 'off', // 关闭 不允许未使用的变
 
-    '@typescript-eslint/no-unused-vars': 'error', // 关闭 不允许未使用的变
+    '@typescript-eslint/no-unused-vars': 'off', // 关闭 不允许未使用的变
     '@typescript-eslint/no-explicit-any': 'off', // 关闭 禁止使用任何类型
     '@typescript-eslint/no-empty-function': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
