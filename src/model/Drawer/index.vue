@@ -1,23 +1,27 @@
 <template>
-  <v-navigation-drawer
-    class="elevation-1"
-    app
-    :expand-on-hover="miniVariant"
-    :color="settings.dark ? '#272727' : undefined"
-    :right="settings.rtl"
-    v-model="drawerCollapsed"
-  >
-    <template #prepend>
-      <default-drawer-list-prepend :miniVariant="miniVariant" />
-    </template>
+  <v-hover>
+    <template #default="{ hover }">
+      <v-navigation-drawer
+        v-model="drawerCollapsed"
+        :class="[miniVariant && hover ? 'elevation-16' : 'elevation-1']"
+        app
+        :expand-on-hover="miniVariant"
+        :color="settings.dark ? '#272727' : undefined"
+        :right="settings.rtl"
+      >
+        <template #prepend>
+          <default-drawer-list-prepend :miniVariant="miniVariant" />
+        </template>
 
-    <default-drawer-list :items="menu" />
-  </v-navigation-drawer>
+        <default-drawer-list :items="menu" />
+      </v-navigation-drawer>
+    </template>
+  </v-hover>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from '@vue/composition-api'
-import { VNavigationDrawer } from 'vuetify/lib'
+import { VNavigationDrawer, VHover } from 'vuetify/lib'
 
 import { DefaultDrawerList, DefaultDrawerListPrepend } from './List'
 
@@ -27,6 +31,7 @@ export default defineComponent({
   name: 'DefaultDrawer',
   components: {
     VNavigationDrawer,
+    VHover,
     DefaultDrawerList,
     DefaultDrawerListPrepend
   },
