@@ -4,21 +4,25 @@
     v-model="model"
     v-if="show"
     :group="group"
-    :prepend-icon="icon"
-    append-icon="$mdiMenuDown"
+    :append-icon="layer ? '' : '$expand'"
     no-action
     v-bind="$attrs"
   >
-    <template v-slot:activator>
+    <template #activator>
       <v-list-item-content>
         <v-list-item-title v-if="item.meta.title" v-text="item.meta.title" />
       </v-list-item-content>
     </template>
 
-    <template v-for="(child, i) in item.children">
-      <default-drawer-list-group v-if="child.children && child.children.length" :key="`sub-group-${i}`" :item="child" sub-group />
+    <template #prependIcon>
+      <v-icon v-if="icon">{{ icon }}</v-icon>
+      <v-icon v-else :style="{ transform: model ? 'rotate(180deg)' : 'rotate(0deg)' }">{{ mdiMenuDown }}</v-icon>
+    </template>
 
-      <default-drawer-list-item v-else :key="`child-${i}`" :item="child" />
+    <template v-for="(child, i) in item.children">
+      <default-drawer-list-group v-if="child.children && child.children.length" :key="`sub-group-${i}`" :item="child" :layer="layer + 1" />
+
+      <default-drawer-list-item v-else :style="layerPadding" :key="`child-${i}`" :item="child" />
     </template>
   </v-list-group>
 </template>
@@ -28,6 +32,8 @@ import { defineComponent, ref, Ref, computed } from '@vue/composition-api'
 import { VListGroup, VListItemContent, VListItemTitle } from 'vuetify/lib'
 
 import { DefaultDrawerListItem } from './'
+
+import { mdiMenuDown } from 'vuetify-pro-layout/vuetify/icons'
 
 export default defineComponent({
   name: 'DefaultDrawerListGroup',
@@ -41,6 +47,10 @@ export default defineComponent({
     item: {
       type: Object,
       default: () => {}
+    },
+    layer: {
+      type: Number,
+      default: 0
     }
   },
   setup(prop, ctx) {
@@ -58,6 +68,13 @@ export default defineComponent({
       return model.value ? on || off : off
     })
 
+    const layerPadding = computed(() => {
+      const left = (12 + prop.layer * 4) * 4
+      return {
+        paddingLeft: `${left}px`
+      }
+    })
+
     function genGroup(children) {
       return children!
         .reduce((acc: string[], cur) => {
@@ -72,7 +89,9 @@ export default defineComponent({
       model,
       group,
       show,
-      icon
+      icon,
+      layerPadding,
+      mdiMenuDown
     }
   }
 })
@@ -81,10 +100,9 @@ export default defineComponent({
 <style lang="scss">
 .default-drawer-list-group.v-list-group.v-list-group--default {
   .v-list-group__header {
-    min-height: 32px;
-    > .v-list-item__icon {
-      margin-bottom: 6px;
-      margin-top: 6px;
+    // min-height: 32px;
+    .v-list-item__icon.v-list-group__header__prepend-icon {
+      margin-right: 14px;
     }
   }
 }

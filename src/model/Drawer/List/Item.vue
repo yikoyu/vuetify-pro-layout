@@ -1,7 +1,6 @@
 <template>
   <v-list-item
     v-if="show"
-    class="default-drawer-list-item v-list-item--default"
     :href="item.meta.target === '_blank' ? item.path : undefined"
     :rel="item.meta.target === '_blank' ? 'nofollow' : undefined"
     :target="item.meta.target"
@@ -10,7 +9,7 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <v-list-item-icon v-if="item.meta.icon">
+    <v-list-item-icon class="mr-2" v-if="item.meta.icon">
       <v-icon v-text="item.meta.icon" />
     </v-list-item-icon>
 
@@ -45,13 +44,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style lang="scss">
-.v-list-item.v-list-item.v-list-item--default {
-  min-height: 32px;
-  > .v-list-item__icon {
-    margin-bottom: 6px;
-    margin-top: 6px;
-  }
-}
-</style>
