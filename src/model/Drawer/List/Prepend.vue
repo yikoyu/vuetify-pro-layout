@@ -1,14 +1,17 @@
 <template>
-  <v-toolbar elevation="1" dense>
-    <v-list-item class="pa-0 mx-n1 fill-height" :ripple="false" link @click="$router.push({ name: 'index' })">
-      <v-list-item-avatar tile size="32">
-        <v-img :src="logo.image" alt="logo" />
-      </v-list-item-avatar>
-      <v-list-item-content v-if="!settings.miniVariant">
-        <v-list-item-title class="text-h4 text-truncate" v-text="logo.text"></v-list-item-title>
-      </v-list-item-content>
-    </v-list-item>
-  </v-toolbar>
+  <v-sheet>
+    <v-toolbar flat dense>
+      <v-list-item class="pa-0 mx-n1 fill-height" :ripple="false" link @click="$router.push({ name: 'index' })">
+        <v-list-item-avatar tile size="32">
+          <v-img :src="logo.image" alt="logo" />
+        </v-list-item-avatar>
+        <v-list-item-content v-if="!settings.miniVariant">
+          <v-list-item-title class="text-h4 text-truncate" v-text="logo.text"></v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-toolbar>
+    <v-divider class="grey lighten-5"></v-divider>
+  </v-sheet>
 </template>
 
 <script lang="ts">
