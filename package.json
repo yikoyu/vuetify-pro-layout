@@ -27,7 +27,8 @@
     "build:es": "rollup --config rollup.config.js --format es --file dist/vuetify-pro-layout.esm.js",
     "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/vuetify-pro-layout.min.js",
     "lint": "vue-cli-service lint",
-    "lint:nofix": "vue-cli-service lint --no-fix"
+    "lint:nofix": "vue-cli-service lint --no-fix",
+    "push": "npm run build && npm publish --registry http://registry.npmjs.org"
   },
   "keywords": [
     "vue",
