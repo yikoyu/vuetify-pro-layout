@@ -1,6 +1,6 @@
 import { provide, computed } from '@vue/composition-api'
 
-export default function useProvide(prop: any) {
+export default function useProvide(prop: any): void {
   const logoRender = computed(() => {
     return prop.logoRender
   })

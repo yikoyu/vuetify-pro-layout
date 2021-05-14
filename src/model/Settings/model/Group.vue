@@ -43,7 +43,7 @@ export default defineComponent({
       require: true
     },
     items: {
-      type: Array as PropType<{ cb: Function; icon: string; text: string }[]>,
+      type: Array as PropType<{ cb?: () => void; icon: string; text: string; disabled?: boolean }[]>,
       require: () => []
     },
     i18nRender: {

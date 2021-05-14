@@ -28,7 +28,7 @@ import DefaultAppBar from '../AppBar/index.vue'
 import DefaultDrawer from '../Drawer/index.vue'
 import DefaultSettings from '../Settings/index.vue'
 
-import { ISettings, ILogo } from 'vuetify-pro-layout/index.interface'
+import { Settings, Logo } from 'vuetify-pro-layout/index.interface'
 
 import { useProvide } from 'vuetify-pro-layout/hooks'
 
@@ -60,11 +60,11 @@ export default defineComponent({
       require: true
     },
     settings: {
-      type: Object as PropType<ISettings>,
+      type: Object as PropType<Settings>,
       require: true
     },
     logoRender: {
-      type: Object as PropType<ILogo>,
+      type: Object as PropType<Logo>,
       default: () => {
         return {
           image: logoDefault,

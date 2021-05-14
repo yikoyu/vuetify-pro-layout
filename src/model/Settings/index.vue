@@ -90,7 +90,7 @@ import {
   DefaultSettingsColorPicker
 } from './model'
 
-import { ISettings } from 'vuetify-pro-layout/index.interface'
+import { Settings } from 'vuetify-pro-layout/index.interface'
 
 import { mdiPlusCircle, mdiRefreshCircle } from 'vuetify-pro-layout/vuetify/icons'
 
@@ -120,7 +120,7 @@ export default defineComponent({
       require: true
     },
     settings: {
-      type: Object as PropType<ISettings>,
+      type: Object as PropType<Settings>,
       require: true
     },
     i18nRender: {

@@ -1,4 +1,4 @@
-export interface ISettings {
+export interface Settings {
   dark: boolean
   mixed: boolean
   system: boolean
@@ -11,7 +11,7 @@ export interface ISettings {
   updateAvailable: boolean
 }
 
-export interface ILogo {
+export interface Logo {
   image: any
   text?: string
 }

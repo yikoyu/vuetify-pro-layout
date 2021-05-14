@@ -17,7 +17,7 @@ import { icons } from './vuetify/icons'
 
 const components = [ProLayout, DefaultSettings, PageHeaderWrapper, AppMenu, AppNestMenu, AppSheet, AppTooltipBtn, AppContextMenu]
 
-const install = (Vue: VueConstructor) => {
+const install = (Vue: VueConstructor): void => {
   components.forEach(item => {
     Vue.component(item.name, item)
   })
