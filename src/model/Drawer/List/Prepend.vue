@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar flat dense>
+  <v-toolbar elevation="1" dense>
     <v-list-item class="pa-0 mx-n1 fill-height" :ripple="false" link @click="$router.push({ name: 'index' })">
       <v-list-item-avatar tile size="32">
         <v-img :src="logo.image" alt="logo" />
