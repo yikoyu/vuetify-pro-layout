@@ -16,13 +16,13 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import { VToolbar, VListItem, VListItemAvatar, VListItemContent, VListItemTitle, VImg } from 'vuetify/lib'
+import { VSheet, VToolbar, VListItem, VListItemAvatar, VListItemContent, VListItemTitle, VImg } from 'vuetify/lib'
 
 import { useInject } from 'vuetify-pro-layout/hooks'
 
 export default defineComponent({
   name: 'DefaultDrawerListPrepend',
-  components: { VToolbar, VListItem, VListItemAvatar, VListItemContent, VListItemTitle, VImg },
+  components: { VSheet, VToolbar, VListItem, VListItemAvatar, VListItemContent, VListItemTitle, VImg },
   props: {
     miniVariant: {
       type: Boolean,
