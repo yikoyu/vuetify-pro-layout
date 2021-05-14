@@ -12,7 +12,10 @@ import {
   mdiArrowExpandHorizontal,
   mdiDotsVertical,
   mdiTab,
-  mdiTabPlus
+  mdiTabPlus,
+  mdiPlusCircle,
+  mdiRefreshCircle,
+  mdiMenuDown
 } from '@mdi/js'
 
 export {
@@ -28,7 +31,10 @@ export {
   mdiArrowExpandHorizontal,
   mdiDotsVertical,
   mdiTab,
-  mdiTabPlus
+  mdiTabPlus,
+  mdiPlusCircle,
+  mdiRefreshCircle,
+  mdiMenuDown
 }
 
 export const icons = {
@@ -44,5 +50,8 @@ export const icons = {
   mdiArrowExpandHorizontal,
   mdiDotsVertical,
   mdiTab,
-  mdiTabPlus
+  mdiTabPlus,
+  mdiPlusCircle,
+  mdiRefreshCircle,
+  mdiMenuDown
 }

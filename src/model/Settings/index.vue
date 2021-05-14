@@ -17,12 +17,12 @@
       <template>
         <v-btn v-if="settings.canInstall" depressed block color="primary" @click="settingChange({ type: 'install' })">
           <span>{{ i18nRender('install') + ' ' + title }}</span>
-          <v-icon right>$mdiPlusCircle</v-icon>
+          <v-icon right>{{ mdiPlusCircle }}</v-icon>
         </v-btn>
 
         <v-btn v-if="!settings.canInstall && settings.updateAvailable" depressed block color="primary" @click="settingChange({ type: 'refresh' })">
           <span>{{ i18nRender('refresh') + ' ' + title }}</span>
-          <v-icon right>$mdiRefreshCircle</v-icon>
+          <v-icon right>{{ mdiRefreshCircle }}</v-icon>
         </v-btn>
 
         <div v-if="settings.canInstall || settings.updateAvailable" class="mt-4 mb-3 mx-n3">
@@ -92,6 +92,8 @@ import {
 
 import { ISettings } from 'vuetify-pro-layout/index.interface'
 
+import { mdiPlusCircle, mdiRefreshCircle } from 'vuetify-pro-layout/vuetify/icons'
+
 export default defineComponent({
   name: 'DefaultSettings',
   components: {
@@ -139,6 +141,9 @@ export default defineComponent({
     }
 
     return {
+      mdiPlusCircle,
+      mdiRefreshCircle,
+
       settingValue,
       settingChange
     }
