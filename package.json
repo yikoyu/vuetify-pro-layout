@@ -1,6 +1,6 @@
 {
   "name": "vuetify-pro-layout",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": false,
   "license": "MIT",
   "description": "vuetify-pro-layout",
@@ -16,7 +16,9 @@
   "files": [
     "dist",
     "types",
-    "*.json"
+    "package.json",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
