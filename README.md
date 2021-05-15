@@ -160,9 +160,8 @@ export default defineComponent({
 | settings@canInstall          | pwa是否可以安装 | Boolean | 必填 |
 | settings@updateAvailable          | pwa是否可以更新 | Boolean | 必填 |
 | logo-render | logo | Object | { dark: SVG, light: SVG, default: SVG } |
-| logo-render@dark | 深色模式logo | SVG | SVG |
-| logo-render@light | 浅色模式logo | SVG | SVG |
-| logo-render@default | 菜单收缩时的logo | SVG | SVG |
+| logo-render@image | logo | SVG | SVG |
+| logo-render@text | logo文本 | SVG | SVG |
 | i18n-render | 本地化渲染函数 (this.$t) | Function (key: string) => string \| false | (t) => t |
 | app-bar-right | v-app右侧插槽 | v-slot | |
 | @setting-change | 设置更新事件 | ({ type, value }: { type: string, value: any }) => void |        |
