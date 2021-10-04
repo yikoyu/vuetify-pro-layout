@@ -1,6 +1,7 @@
 <template>
   <v-list-item
     v-if="show"
+    class="v-list-item--default"
     :href="item.meta.target === '_blank' ? item.path : undefined"
     :rel="item.meta.target === '_blank' ? 'nofollow' : undefined"
     :target="item.meta.target"
@@ -44,3 +45,9 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss">
+.v-list-item--default {
+  min-height: 32px !important;
+}
+</style>

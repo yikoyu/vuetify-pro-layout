@@ -1,6 +1,6 @@
 <template>
   <v-list-group
-    class="default-drawer-list-group v-list-group--default"
+    class="default-drawer-list-group v-list-group--default mb-1"
     v-model="model"
     v-if="show"
     :group="group"
@@ -20,7 +20,13 @@
     </template>
 
     <template v-for="(child, i) in item.children">
-      <default-drawer-list-group v-if="child.children && child.children.length" :key="`sub-group-${i}`" :item="child" :layer="layer + 1" />
+      <default-drawer-list-group
+        v-if="child.children && child.children.length"
+        class="default-drawer-list-item-group"
+        :key="`sub-group-${i}`"
+        :item="child"
+        :layer="layer + 1"
+      />
 
       <default-drawer-list-item v-else :style="layerPadding" :key="`child-${i}`" :item="child" />
     </template>
@@ -99,8 +105,15 @@ export default defineComponent({
 
 <style lang="scss">
 .default-drawer-list-group.v-list-group.v-list-group--default {
+  .default-drawer-list-item-group {
+    .v-list-item__icon.v-list-group__header__prepend-icon {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+  }
+
   .v-list-group__header {
-    // min-height: 32px;
+    min-height: 32px;
     .v-list-item__icon.v-list-group__header__prepend-icon {
       margin-right: 14px;
     }
