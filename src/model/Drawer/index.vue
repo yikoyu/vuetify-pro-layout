@@ -3,7 +3,7 @@
     <template #default="{ hover }">
       <v-navigation-drawer
         v-model="drawerCollapsed"
-        :class="[miniVariant && hover ? 'elevation-16' : 'elevation-1']"
+        :class="[miniVariant && hover ? 'elevation-16' : undefined]"
         app
         :expand-on-hover="miniVariant"
         :color="settings.dark ? '#272727' : undefined"
