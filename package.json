@@ -14,7 +14,7 @@
     "vue",
     "typescript",
     "vuetify",
-    "dialog"
+    "layout"
   ],
   "main": "./lib/vuetify-pro-layout.umd.js",
   "module": "./lib/vuetify-pro-layout.es.js",
