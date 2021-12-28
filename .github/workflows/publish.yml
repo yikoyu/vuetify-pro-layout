@@ -1,0 +1,51 @@
+on:
+  push:
+    tags:
+    - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish-to-npm:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+        pnpm: [6.22.1]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/cache@v2
+      with:
+        path: ~/.pnpm-store
+        key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+        restore-keys: |
+          ${{ runner.os }}-
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2.0.1
+      with:
+        version: ${{ matrix.pnpm }}
+
+    - name: Setup Node.js ${{ matrix.node }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node }}
+        registry-url: https://registry.npmjs.com/
+        cache: 'pnpm'
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Build Lib
+      run: pnpm build:lib
+
+    - name: Gen npmrc
+      run: echo "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ./.npmrc
+
+    - name: Publish to NPM
+      run: pnpm publish --no-git-checks
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
