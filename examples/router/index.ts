@@ -29,7 +29,7 @@ const createRouter = () =>
 
       return goTo(scrollTo)
     },
-    base: '/',
+    base: '/vuetify-pro-layout/',
     routes: constantRouterMap
   })
 
