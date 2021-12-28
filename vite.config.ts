@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
   const isExamples = mode === 'examples'
 
   const config: UserConfig = {
-    base: './',
+    base: '/vuetify-pro-layout/',
     plugins: [
       createVuePlugin({
         jsx: true,
@@ -33,8 +33,7 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        // 'vuetify-pro-layout': resolve(__dirname, 'lib/vuetify-pro-layout.es.js'),
-        'vuetify-pro-layout': resolve(__dirname, 'src/index.ts'),
+        'vuetify-pro-layout': resolve(__dirname, 'lib/vuetify-pro-layout.es.js'),
         '@': resolve(__dirname, 'src'),
         '#': resolve(__dirname, 'examples')
       }
