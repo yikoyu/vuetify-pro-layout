@@ -14,14 +14,9 @@ export interface Settings {
   updateAvailable?: boolean
 }
 
-export interface Logo {
-  image: any
-  text?: string
-}
-
 export interface ContextInstance {
   readonly title: string
-  readonly logo: Logo
+  readonly logo: unknown
   readonly menu: RouteConfig[]
   readonly collapsed: boolean
   readonly setting: boolean

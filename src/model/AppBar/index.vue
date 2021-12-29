@@ -3,7 +3,7 @@
     <v-app-bar-nav-icon v-if="settings.layout !== 'top'" @click="collapsedChange"></v-app-bar-nav-icon>
     <v-app-bar-nav-icon v-if="settings.layout === 'top'" @click="$router.push({ name: 'index' })">
       <v-avatar tile size="32">
-        <v-img :src="logo.image" alt="logo" />
+        <v-img :src="logo" alt="logo" />
       </v-avatar>
     </v-app-bar-nav-icon>
 
