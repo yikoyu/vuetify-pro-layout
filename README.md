@@ -1,4 +1,4 @@
-# Vuetify Pro Dialog
+# Vuetify Pro Layout
 
 `Vuetify`的基础布局，开箱即用
 
