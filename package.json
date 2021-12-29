@@ -2,7 +2,7 @@
   "name": "vuetify-pro-layout",
   "version": "2.0.1",
   "license": "MIT",
-  "description": "functional components snackbar and dialog for vuetify",
+  "description": "vuetify基础布局，开箱即用",
   "private": false,
   "author": "yikoyu<2282373181@qq.com>",
   "repository": {
