@@ -1,5 +1,5 @@
 const typeEnum = {
-  init: {
+  feat: {
     description: 'A new feature',
     title: 'Features',
     emoji: '✨',
