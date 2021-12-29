@@ -56,11 +56,8 @@ export default defineComponent({
     })
 
     const context = reactive({
-      title: '测试',
-      logo: {
-        image: logoDefault,
-        text: 'vuetify'
-      },
+      title: `<span style="font-weight: bold">我是标题</span>`,
+      logo: logoDefault,
       menu,
       collapsed,
       setting,
