@@ -39,10 +39,9 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 
-    - name: Gen npmrc
-      run: echo "//registry.npmjs.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> ./.npmrc
-
     - name: Publish to NPM
-      run: pnpm push
+      run: |
+        npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+        pnpm push
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
