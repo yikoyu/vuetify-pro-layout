@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "pinia": "^2.0.8",
-    "pinia-plugin-persistedstate": "^1.0.2"
+    "pinia-plugin-persistedstate": "^1.0.2",
+    "vuetify-pro-layout": "workspace:^2.0.1"
   }
 }

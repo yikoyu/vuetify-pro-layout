@@ -19,8 +19,7 @@
     "types": ["vite/client", "vuetify", "node"],
     "paths": {
       "@/*":["./src/*"],
-      "#/*":["./examples/*"],
-      "vuetify-pro-layout":["./lib/src/index.d.ts"]
+      "#/*":["./examples/*"]
     }
   },
   "vueCompilerOptions": {

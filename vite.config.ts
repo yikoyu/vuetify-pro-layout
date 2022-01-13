@@ -33,7 +33,6 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       alias: {
-        'vuetify-pro-layout': resolve(__dirname, 'lib/vuetify-pro-layout.es.js'),
         '@': resolve(__dirname, 'src'),
         '#': resolve(__dirname, 'examples')
       }
