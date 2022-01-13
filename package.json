@@ -22,7 +22,8 @@
     ".": {
       "import": "./lib/vuetify-pro-layout.es.js",
       "require": "./lib/vuetify-pro-layout.umd.js"
-    }
+    },
+    "./lib/style.css": "./lib/style.css"
   },
   "types": "./lib/src/index.d.ts",
   "files": [
