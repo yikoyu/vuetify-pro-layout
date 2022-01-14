@@ -93,7 +93,7 @@ importers:
       vue: ^2.6.14
       vue-router: ^3.5.3
       vuetify: ^2.6.2
-      vuetify-pro-layout: workspace:^2.0.1
+      vuetify-pro-layout: workspace:^2.0.2
     dependencies:
       '@vue/composition-api': 1.4.3_vue@2.6.14
       pinia: 2.0.8_4bd4c564b9cc432d40cf4df63961007e
@@ -2479,7 +2479,7 @@ packages:
     dev: true
 
   /esbuild-android-arm64/0.13.14:
-    resolution: {integrity: sha512-Q+Xhfp827r+ma8/DJgpMRUbDZfefsk13oePFEXEIJ4gxFbNv5+vyiYXYuKm43/+++EJXpnaYmEnu4hAKbAWYbA==}
+    resolution: {integrity: sha512-Q+Xhfp827r+ma8/DJgpMRUbDZfefsk13oePFEXEIJ4gxFbNv5+vyiYXYuKm43/+++EJXpnaYmEnu4hAKbAWYbA==, tarball: esbuild-android-arm64/download/esbuild-android-arm64-0.13.14.tgz}
     cpu: [arm64]
     os: [android]
     requiresBuild: true
@@ -2487,7 +2487,7 @@ packages:
     optional: true
 
   /esbuild-darwin-64/0.13.14:
-    resolution: {integrity: sha512-YmOhRns6QBNSjpVdTahi/yZ8dscx9ai7a6OY6z5ACgOuQuaQ2Qk2qgJ0/siZ6LgD0gJFMV8UINFV5oky5TFNQQ==}
+    resolution: {integrity: sha512-YmOhRns6QBNSjpVdTahi/yZ8dscx9ai7a6OY6z5ACgOuQuaQ2Qk2qgJ0/siZ6LgD0gJFMV8UINFV5oky5TFNQQ==, tarball: esbuild-darwin-64/download/esbuild-darwin-64-0.13.14.tgz}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
@@ -2495,7 +2495,7 @@ packages:
     optional: true
 
   /esbuild-darwin-arm64/0.13.14:
-    resolution: {integrity: sha512-Lp00VTli2jqZghSa68fx3fEFCPsO1hK59RMo1PRap5RUjhf55OmaZTZYnCDI0FVlCtt+gBwX5qwFt4lc6tI1xg==}
+    resolution: {integrity: sha512-Lp00VTli2jqZghSa68fx3fEFCPsO1hK59RMo1PRap5RUjhf55OmaZTZYnCDI0FVlCtt+gBwX5qwFt4lc6tI1xg==, tarball: esbuild-darwin-arm64/download/esbuild-darwin-arm64-0.13.14.tgz}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
@@ -2503,7 +2503,7 @@ packages:
     optional: true
 
   /esbuild-freebsd-64/0.13.14:
-    resolution: {integrity: sha512-BKosI3jtvTfnmsCW37B1TyxMUjkRWKqopR0CE9AF2ratdpkxdR24Vpe3gLKNyWiZ7BE96/SO5/YfhbPUzY8wKw==}
+    resolution: {integrity: sha512-BKosI3jtvTfnmsCW37B1TyxMUjkRWKqopR0CE9AF2ratdpkxdR24Vpe3gLKNyWiZ7BE96/SO5/YfhbPUzY8wKw==, tarball: esbuild-freebsd-64/download/esbuild-freebsd-64-0.13.14.tgz}
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
@@ -2511,7 +2511,7 @@ packages:
     optional: true
 
   /esbuild-freebsd-arm64/0.13.14:
-    resolution: {integrity: sha512-yd2uh0yf+fWv5114+SYTl4/1oDWtr4nN5Op+PGxAkMqHfYfLjFKpcxwCo/QOS/0NWqPVE8O41IYZlFhbEN2B8Q==}
+    resolution: {integrity: sha512-yd2uh0yf+fWv5114+SYTl4/1oDWtr4nN5Op+PGxAkMqHfYfLjFKpcxwCo/QOS/0NWqPVE8O41IYZlFhbEN2B8Q==, tarball: esbuild-freebsd-arm64/download/esbuild-freebsd-arm64-0.13.14.tgz}
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
@@ -2519,7 +2519,7 @@ packages:
     optional: true
 
   /esbuild-linux-32/0.13.14:
-    resolution: {integrity: sha512-a8rOnS1oWSfkkYWXoD2yXNV4BdbDKA7PNVQ1klqkY9SoSApL7io66w5H44mTLsfyw7G6Z2vLlaLI2nz9MMAowA==}
+    resolution: {integrity: sha512-a8rOnS1oWSfkkYWXoD2yXNV4BdbDKA7PNVQ1klqkY9SoSApL7io66w5H44mTLsfyw7G6Z2vLlaLI2nz9MMAowA==, tarball: esbuild-linux-32/download/esbuild-linux-32-0.13.14.tgz}
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
@@ -2527,7 +2527,7 @@ packages:
     optional: true
 
   /esbuild-linux-64/0.13.14:
-    resolution: {integrity: sha512-yPZSoMs9W2MC3Dw+6kflKt5FfQm6Dicex9dGIr1OlHRsn3Hm7yGMUTctlkW53KknnZdOdcdd5upxvbxqymczVQ==}
+    resolution: {integrity: sha512-yPZSoMs9W2MC3Dw+6kflKt5FfQm6Dicex9dGIr1OlHRsn3Hm7yGMUTctlkW53KknnZdOdcdd5upxvbxqymczVQ==, tarball: esbuild-linux-64/download/esbuild-linux-64-0.13.14.tgz}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
@@ -2535,7 +2535,7 @@ packages:
     optional: true
 
   /esbuild-linux-arm/0.13.14:
-    resolution: {integrity: sha512-8chZE4pkKRvJ/M/iwsNQ1KqsRg2RyU5eT/x2flNt/f8F2TVrDreR7I0HEeCR50wLla3B1C3wTIOzQBmjuc6uWg==}
+    resolution: {integrity: sha512-8chZE4pkKRvJ/M/iwsNQ1KqsRg2RyU5eT/x2flNt/f8F2TVrDreR7I0HEeCR50wLla3B1C3wTIOzQBmjuc6uWg==, tarball: esbuild-linux-arm/download/esbuild-linux-arm-0.13.14.tgz}
     cpu: [arm]
     os: [linux]
     requiresBuild: true
@@ -2543,7 +2543,7 @@ packages:
     optional: true
 
   /esbuild-linux-arm64/0.13.14:
-    resolution: {integrity: sha512-Lvo391ln9PzC334e+jJ2S0Rt0cxP47eoH5gFyv/E8HhOnEJTvm7A+RRnMjjHnejELacTTfYgFGQYPjLsi/jObQ==}
+    resolution: {integrity: sha512-Lvo391ln9PzC334e+jJ2S0Rt0cxP47eoH5gFyv/E8HhOnEJTvm7A+RRnMjjHnejELacTTfYgFGQYPjLsi/jObQ==, tarball: esbuild-linux-arm64/download/esbuild-linux-arm64-0.13.14.tgz}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
@@ -2551,7 +2551,7 @@ packages:
     optional: true
 
   /esbuild-linux-mips64le/0.13.14:
-    resolution: {integrity: sha512-MZhgxbmrWbpY3TOE029O6l5tokG9+Yoj2hW7vdit/d/VnmneqeGrSHADuDL6qXM8L5jaCiaivb4VhsyVCpdAbQ==}
+    resolution: {integrity: sha512-MZhgxbmrWbpY3TOE029O6l5tokG9+Yoj2hW7vdit/d/VnmneqeGrSHADuDL6qXM8L5jaCiaivb4VhsyVCpdAbQ==, tarball: esbuild-linux-mips64le/download/esbuild-linux-mips64le-0.13.14.tgz}
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
@@ -2559,7 +2559,7 @@ packages:
     optional: true
 
   /esbuild-linux-ppc64le/0.13.14:
-    resolution: {integrity: sha512-un7KMwS7fX1Un6BjfSZxTT8L5cV/8Uf4SAhM7WYy2XF8o8TI+uRxxD03svZnRNIPsN2J5cl6qV4n7Iwz+yhhVw==}
+    resolution: {integrity: sha512-un7KMwS7fX1Un6BjfSZxTT8L5cV/8Uf4SAhM7WYy2XF8o8TI+uRxxD03svZnRNIPsN2J5cl6qV4n7Iwz+yhhVw==, tarball: esbuild-linux-ppc64le/download/esbuild-linux-ppc64le-0.13.14.tgz}
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
@@ -2567,7 +2567,7 @@ packages:
     optional: true
 
   /esbuild-netbsd-64/0.13.14:
-    resolution: {integrity: sha512-5ekKx/YbOmmlTeNxBjh38Uh5TGn5C4uyqN17i67k18pS3J+U2hTVD7rCxcFcRS1AjNWumkVL3jWqYXadFwMS0Q==}
+    resolution: {integrity: sha512-5ekKx/YbOmmlTeNxBjh38Uh5TGn5C4uyqN17i67k18pS3J+U2hTVD7rCxcFcRS1AjNWumkVL3jWqYXadFwMS0Q==, tarball: esbuild-netbsd-64/download/esbuild-netbsd-64-0.13.14.tgz}
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
@@ -2575,7 +2575,7 @@ packages:
     optional: true
 
   /esbuild-openbsd-64/0.13.14:
-    resolution: {integrity: sha512-9bzvwewHjct2Cv5XcVoE1yW5YTW12Sk838EYfA46abgnhxGoFSD1mFcaztp5HHC43AsF+hQxbSFG/RilONARUA==}
+    resolution: {integrity: sha512-9bzvwewHjct2Cv5XcVoE1yW5YTW12Sk838EYfA46abgnhxGoFSD1mFcaztp5HHC43AsF+hQxbSFG/RilONARUA==, tarball: esbuild-openbsd-64/download/esbuild-openbsd-64-0.13.14.tgz}
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
@@ -2583,7 +2583,7 @@ packages:
     optional: true
 
   /esbuild-sunos-64/0.13.14:
-    resolution: {integrity: sha512-mjMrZB76M6FmoiTvj/RGWilrioR7gVwtFBRVugr9qLarXMIU1W/pQx+ieEOtflrW61xo8w1fcxyHsVVGRvoQ0w==}
+    resolution: {integrity: sha512-mjMrZB76M6FmoiTvj/RGWilrioR7gVwtFBRVugr9qLarXMIU1W/pQx+ieEOtflrW61xo8w1fcxyHsVVGRvoQ0w==, tarball: esbuild-sunos-64/download/esbuild-sunos-64-0.13.14.tgz}
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
@@ -2591,7 +2591,7 @@ packages:
     optional: true
 
   /esbuild-windows-32/0.13.14:
-    resolution: {integrity: sha512-GZa6mrx2rgfbH/5uHg0Rdw50TuOKbdoKCpEBitzmG5tsXBdce+cOL+iFO5joZc6fDVCLW3Y6tjxmSXRk/v20Hg==}
+    resolution: {integrity: sha512-GZa6mrx2rgfbH/5uHg0Rdw50TuOKbdoKCpEBitzmG5tsXBdce+cOL+iFO5joZc6fDVCLW3Y6tjxmSXRk/v20Hg==, tarball: esbuild-windows-32/download/esbuild-windows-32-0.13.14.tgz}
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
@@ -2607,7 +2607,7 @@ packages:
     optional: true
 
   /esbuild-windows-arm64/0.13.14:
-    resolution: {integrity: sha512-KP8FHVlWGhM7nzYtURsGnskXb/cBCPTfj0gOKfjKq2tHtYnhDZywsUG57nk7TKhhK0fL11LcejHG3LRW9RF/9A==}
+    resolution: {integrity: sha512-KP8FHVlWGhM7nzYtURsGnskXb/cBCPTfj0gOKfjKq2tHtYnhDZywsUG57nk7TKhhK0fL11LcejHG3LRW9RF/9A==, tarball: esbuild-windows-arm64/download/esbuild-windows-arm64-0.13.14.tgz}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
@@ -3086,7 +3086,7 @@ packages:
     dev: true
 
   /fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, tarball: fsevents/download/fsevents-2.3.2.tgz}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
