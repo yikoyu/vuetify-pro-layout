@@ -4,6 +4,7 @@
       <v-navigation-drawer
         v-model="drawerCollapsed"
         :class="[miniVariant && hover ? 'elevation-16' : undefined]"
+        :miniVariant="miniVariant"
         app
         :expand-on-hover="miniVariant"
         :color="settings.dark ? '#272727' : undefined"
