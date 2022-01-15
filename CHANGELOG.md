@@ -1,3 +1,13 @@
+## [2.0.3](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.0.2...v2.0.3) (2022-01-15)
+
+
+### Bug Fixes
+
+* **Drawer:** lg尺寸以上设备折叠异常 ([9cb4a2b](https://github.com/yikoyu/vuetify-pro-layout/commit/9cb4a2bce1c53c397f165faf31274185f35c83db))
+* **install:** pnpm以外包管理安装报错 ([ee0568b](https://github.com/yikoyu/vuetify-pro-layout/commit/ee0568bce52de3fe341dc16a19af0808f054ec53))
+
+
+
 ## [2.0.2](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.0.1...v2.0.2) (2022-01-13)
 
 
