@@ -235,9 +235,9 @@ value参数如下：
 | content                | 内容区              | String \| v-slot | -      |
 | extra-content          | 扩展内容区          | String \| v-slot | -      |
 | toolbar                | 底栏                | v-slot           | -      |
-| tab-list               | Tabs 导航           | string[]         | []     |
+| tab-list               | Tabs 导航           | string[] \| object[]         | []     |
 | tab-active-key         | 当前 Tab 选中项     | Number           | 0      |
-| @tab-change            | Tab 改变事件        | (key) => void    | -      |
+| @tab-change            | Tab 改变事件        | (e: object) => void    | -      |
 | @update:tab-active-key | tab-active-key.sync |                  | -      |
 
 [Vue-Badge]: https://img.shields.io/badge/-Vue_>=_2.6.14-4FC08D?logo=vue.js&logoColor=white "Vue"

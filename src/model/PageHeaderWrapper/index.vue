@@ -17,8 +17,10 @@
       </div>
 
       <template v-if="tabList.length" #extension>
-        <v-tabs v-model="tabActiveKeySync" show-arrows center-active @change="handleChange">
-          <v-tab v-for="(item, index) in tabList" :key="index">{{ item }}</v-tab>
+        <v-tabs v-model="tabActiveKeySync" center-active @change="handleChange">
+          <v-tab v-for="(item, index) in tabList" :key="index" v-bind="isObject(item) ? item : {}">
+            {{ isObject(item) ? item.label : item }}
+          </v-tab>
         </v-tabs>
       </template>
     </v-toolbar>
@@ -38,6 +40,17 @@
 <script lang="ts">
 import { computed, defineComponent, PropType } from '@vue/composition-api'
 
+interface Tab {
+  label: string
+  value: any
+  [key: string]: any
+}
+
+const isObject = (value: any): value is object => {
+  const type = typeof value
+  return value !== null && (type === 'object' || type === 'function')
+}
+
 export default defineComponent({
   name: 'PageHeaderWrapper',
   props: {
@@ -50,7 +63,7 @@ export default defineComponent({
       default: ''
     },
     tabList: {
-      type: Array as PropType<string[]>,
+      type: Array as PropType<string[] | Tab[]>,
       default: () => []
     },
     tabActiveKey: {
@@ -87,7 +100,8 @@ export default defineComponent({
     const routeName = computed(() => root.$route.meta?.title)
 
     function handleChange(e: number) {
-      emit('tab-change', e)
+      const item = prop.tabList[e]
+      emit('tab-change', { index: e, ...(isObject(item) ? item : {}) })
     }
 
     return {
@@ -96,7 +110,8 @@ export default defineComponent({
       matchRoute,
       routeName,
 
-      handleChange
+      handleChange,
+      isObject
     }
   }
 })

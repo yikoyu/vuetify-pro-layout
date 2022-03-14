@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, Ref, ref, unref, watch } from '@vue/composition-api'
+import { defineComponent, reactive, ref, unref, watch } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'DashboardWorkplace',
@@ -22,15 +22,38 @@ export default defineComponent({
     const toolbar = ref(false)
     const lang = reactive({ lang: '' })
 
-    const tabActiveKey: Ref<number> = ref(0)
-    const tabList: Ref<string[]> = ref(['Tab 1', 'Tab 2', 'Tab 3', 'Tab 4', 'Tab 5'])
+    const tabActiveKey = ref<number>(0)
+    // const tabList = ref<string[]>(['Tab 1', 'Tab 2', 'Tab 3', 'Tab 4', 'Tab 5'])
+    const tabList = ref([
+      {
+        label: 'Tab 1',
+        value: 11
+      },
+      {
+        label: 'Tab 2',
+        value: 22
+      },
+      {
+        label: 'Tab 3',
+        value: 33
+      },
+      {
+        label: 'Tab 4',
+        value: 44,
+        disabled: true
+      },
+      {
+        label: 'Tab 5',
+        value: 55
+      }
+    ])
 
     watch(tabActiveKey, (val: number) => {
-      console.log('val', val, tabList.value[val])
+      console.log('watch', val, unref(tabList)[val])
     })
 
-    function tabChange(e: number) {
-      console.log('e', e, tabList.value[e])
+    function tabChange(e: Recordable) {
+      console.log('change', e, unref(tabList)[e.index])
     }
 
     return {
