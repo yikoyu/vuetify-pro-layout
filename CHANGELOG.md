@@ -1,3 +1,17 @@
+# [2.1.0](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.0.3...v2.1.0) (2022-03-14)
+
+
+### Bug Fixes
+
+* 边框padding改为4n，sm大小一下为2n ([31f2f3f](https://github.com/yikoyu/vuetify-pro-layout/commit/31f2f3f48ba16f3c8dd35f5ae740bc8416ed1ab8))
+
+
+### Features
+
+* **PageHeaderWrapper:** tab-list支持object数组，tab-change改为object返回 ([ad1bdb7](https://github.com/yikoyu/vuetify-pro-layout/commit/ad1bdb71e23d747ef9a705381942b7a61f2b118f))
+
+
+
 ## [2.0.3](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.0.2...v2.0.3) (2022-01-15)
 
 
