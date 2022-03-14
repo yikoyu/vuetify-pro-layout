@@ -45,8 +45,8 @@ jobs:
 
     # 使用 tyankatsu0105/read-package-version-actions@v1 工具来读取对应的package.json 数据
     - name: Read package.json
-        uses: tyankatsu0105/read-package-version-actions@v1
-        id: package-version
+      uses: tyankatsu0105/read-package-version-actions@v1
+      id: package-version
 
     # 关于创建 release 的更多参数，可以查看 actions/create-release@v1
       - name: Create Release for Tag
