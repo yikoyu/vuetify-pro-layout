@@ -11,7 +11,7 @@
     <default-settings @setting-change="settingChange" />
 
     <v-main :style="{ backgroundColor: settings.dark ? undefined : '#F2F4FA' }">
-      <v-container :fluid="settings.contentWidth === 'fluid'" class="pa-2" style="height: calc(100% - 8px)">
+      <v-container :fluid="settings.contentWidth === 'fluid'" class="pa-sm-4 pa-2" style="height: calc(100% - 8px)">
         <slot></slot>
       </v-container>
     </v-main>

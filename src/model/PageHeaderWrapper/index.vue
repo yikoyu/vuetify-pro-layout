@@ -1,6 +1,6 @@
 <template>
-  <div id="page-header-wrapper" class="fill-height ma-n2">
-    <v-toolbar v-bind="$attrs" class="ma-2 mb-0" rounded dense height="auto" :elevation="2" v-on="$listeners">
+  <div id="page-header-wrapper" class="fill-height">
+    <v-toolbar v-bind="$attrs" rounded dense height="auto" :elevation="2" v-on="$listeners">
       <div class="d-flex flex-column mb-2" style="width: 100%">
         <v-breadcrumbs class="px-0 py-2" :items="matchRoute"></v-breadcrumbs>
         <v-toolbar-title class="text-h6 font-weight-bold">{{ routeName }}</v-toolbar-title>
@@ -23,7 +23,7 @@
       </template>
     </v-toolbar>
 
-    <v-container fluid class="px-2" :class="[{ 'mb-14': $slots.toolbar }]">
+    <v-container fluid class="pa-0 py-sm-4 py-2" :class="[{ 'mb-14': $slots.toolbar }]">
       <slot></slot>
     </v-container>
 
