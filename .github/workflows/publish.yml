@@ -1,7 +1,4 @@
 on:
-  push:
-    tags:
-    - 'v*'
   workflow_dispatch:
 
 jobs:
@@ -45,3 +42,21 @@ jobs:
         pnpm push
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    # 使用 tyankatsu0105/read-package-version-actions@v1 工具来读取对应的package.json 数据
+    - name: Read package.json
+        uses: tyankatsu0105/read-package-version-actions@v1
+        id: package-version
+
+    # 关于创建 release 的更多参数，可以查看 actions/create-release@v1
+      - name: Create Release for Tag
+        id: release_tag
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 这块需要用到 github的token，因为需要对分之进行代码推送
+        with:
+          tag_name: v${{ steps.package-version.outputs.version }}
+          release_name: v${{ steps.package-version.outputs.version }}
+          prerelease: false # 是否为预发布版本
+          body: |
+            详情请参阅 [CHANGELOG.md](https://github.com/yikoyu/vuetify-pro-layout/blob/v${{ steps.package-version.outputs.version }}/CHANGELOG.md)
