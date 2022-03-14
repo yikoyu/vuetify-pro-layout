@@ -25,7 +25,7 @@
       </template>
     </v-toolbar>
 
-    <v-container fluid class="pa-0 py-sm-4 py-2" :class="[{ 'mb-14': $slots.toolbar }]">
+    <v-container fluid class="pa-0 pt-sm-4 pt-2" :class="[{ 'mb-14': $slots.toolbar }]">
       <slot></slot>
     </v-container>
 
