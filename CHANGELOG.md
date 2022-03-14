@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.1.0...v2.1.1) (2022-03-14)
+
+
+### Bug Fixes
+
+* **PageHeaderWrapper:** container容器去除padding-bottom ([e13173d](https://github.com/yikoyu/vuetify-pro-layout/commit/e13173dace080d784da3b79000fc9ed1abde1878))
+
+
+
 # [2.1.0](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.0.3...v2.1.0) (2022-03-14)
 
 

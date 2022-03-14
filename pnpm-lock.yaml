@@ -93,7 +93,7 @@ importers:
       vue: ^2.6.14
       vue-router: ^3.5.3
       vuetify: ^2.6.2
-      vuetify-pro-layout: workspace:^2.1.0
+      vuetify-pro-layout: workspace:^2.1.1
     dependencies:
       '@vue/composition-api': 1.4.3_vue@2.6.14
       pinia: 2.0.8_4bd4c564b9cc432d40cf4df63961007e
