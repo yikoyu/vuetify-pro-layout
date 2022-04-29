@@ -1,3 +1,13 @@
+## [2.1.2](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.1.1...v2.1.2) (2022-04-29)
+
+
+### Bug Fixes
+
+* **logo:** logo显示被裁剪 ([6e8e3cb](https://github.com/yikoyu/vuetify-pro-layout/commit/6e8e3cb33c76bf2ed9177819f3eb9868c89c0a37))
+* **types:** 类型ContextInstance取消readonly ([c0afc04](https://github.com/yikoyu/vuetify-pro-layout/commit/c0afc04f115dc08e49afbc6440c278af628b782e))
+
+
+
 ## [2.1.1](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.1.0...v2.1.1) (2022-03-14)
 
 
