@@ -2,7 +2,7 @@ import { defineComponent, ref, unref, inject, provide, toRefs } from '@vue/compo
 import type { Ref, InjectionKey, PropType, ToRefs } from '@vue/composition-api'
 import type { ContextInstance } from '@/type'
 
-const key: InjectionKey<Ref<Required<ContextInstance>>> = Symbol('vuetify-pro-layout')
+const key: InjectionKey<Ref<ContextInstance>> = Symbol('vuetify-pro-layout')
 
 export function createContext() {
   return defineComponent({
@@ -21,8 +21,8 @@ export function createContext() {
   })
 }
 
-export function useContext(defaultValue?: ContextInstance): ToRefs<Readonly<Required<ContextInstance>>> {
-  const context = inject(key, ref(defaultValue) as Ref<Required<ContextInstance>>)
+export function useContext(defaultValue?: ContextInstance): ToRefs<Readonly<ContextInstance>> {
+  const context = inject(key, ref(defaultValue) as Ref<ContextInstance>)
 
   return toRefs(unref(context))
 }

@@ -15,11 +15,11 @@ export interface Settings {
 }
 
 export interface ContextInstance {
-  readonly title: string
-  readonly logo: unknown
-  readonly menu: RouteConfig[]
-  readonly collapsed: boolean
-  readonly setting: boolean
-  readonly settings: Settings
-  readonly i18nRender: (t: string) => string
+  title: string
+  logo: unknown
+  menu: RouteConfig[]
+  collapsed: boolean
+  setting: boolean
+  settings: Settings
+  i18nRender: (t: string) => string
 }
