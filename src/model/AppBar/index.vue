@@ -2,8 +2,8 @@
   <v-app-bar v-bind="{ [`clipped-${settings.rtl ? 'left' : 'right'}`]: true }" id="default-app-bar" app dense :color="settings.dark ? undefined : 'white'">
     <v-app-bar-nav-icon v-if="settings.layout !== 'top'" @click="collapsedChange"></v-app-bar-nav-icon>
     <v-app-bar-nav-icon v-if="settings.layout === 'top'" @click="$router.push({ name: 'index' })">
-      <v-avatar tile size="32">
-        <v-img :src="logo" alt="logo" />
+      <v-avatar tile :size="32">
+        <v-img :src="logo" contain :max-height="32" :max-width="32" alt="logo" />
       </v-avatar>
     </v-app-bar-nav-icon>
 

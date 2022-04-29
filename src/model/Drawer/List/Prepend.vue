@@ -2,8 +2,8 @@
   <v-sheet>
     <v-toolbar flat dense>
       <v-list-item class="pa-0 mx-n1 fill-height">
-        <v-list-item-avatar tile size="32">
-          <v-img :src="logo" alt="logo" />
+        <v-list-item-avatar tile :size="32">
+          <v-img :src="logo" contain :max-height="32" :max-width="32" alt="logo" />
         </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title class="text-h4 text-truncate" v-html="title"></v-list-item-title>
