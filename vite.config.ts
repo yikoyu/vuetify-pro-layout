@@ -15,12 +15,7 @@ export default defineConfig(({ mode }) => {
   const config: UserConfig = {
     base: '/vuetify-pro-layout/',
     plugins: [
-      createVuePlugin({
-        jsx: true,
-        jsxOptions: {
-          compositionAPI: true
-        }
-      }),
+      createVuePlugin(),
       Components({
         dirs: undefined,
         dts: false,

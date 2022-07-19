@@ -14,7 +14,7 @@
   </v-list>
 </template>
 
-<script lang="tsx">
+<script lang="ts">
 import { defineComponent, PropType } from '@vue/composition-api'
 
 import { DefaultDrawerListGroup, DefaultDrawerListItem } from './'
