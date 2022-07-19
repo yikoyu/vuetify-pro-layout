@@ -3,6 +3,8 @@
     <default-app-bar @collapsed-change="collapsedChange">
       <template #right>
         <slot name="app-bar-right"></slot>
+
+        <app-tooltip-btn v-if="showSettingBtn" :input-value="setting" :icon="mdiCogOutline" :path="i18nRender('app.setting')" @click="handleSetting" />
       </template>
     </default-app-bar>
 
@@ -19,11 +21,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, unref } from '@vue/composition-api'
 
 import DefaultAppBar from '../AppBar/index.vue'
 import DefaultDrawer from '../Drawer/index.vue'
 import DefaultSettings from '../Settings/index.vue'
+import AppTooltipBtn from '@/components/TooltipBtn/index.vue'
+import { mdiCogOutline } from '@/vuetify/icons'
 
 import { injectContext } from '@/hooks'
 
@@ -32,10 +36,21 @@ export default defineComponent({
   components: {
     DefaultAppBar,
     DefaultDrawer,
-    DefaultSettings
+    DefaultSettings,
+    AppTooltipBtn
+  },
+  props: {
+    showSettingBtn: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, { emit }) {
-    const { settings } = injectContext()
+    const { setting, settings, i18nRender } = injectContext()
+
+    function handleSetting() {
+      settingChange({ type: 'setting', value: !unref(setting) })
+    }
 
     function settingChange({ type, value }: { type: string; value: string | boolean }) {
       emit('setting-change', { type, value })
@@ -46,7 +61,11 @@ export default defineComponent({
     }
 
     return {
+      mdiCogOutline,
+      setting,
       settings,
+      i18nRender,
+      handleSetting,
       settingChange,
       collapsedChange
     }

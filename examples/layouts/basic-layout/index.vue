@@ -1,9 +1,6 @@
 <template>
   <provide-context :value="context">
-    <pro-layout @setting-change="settingChange" @collapsed-change="collapsedChange">
-      <template #app-bar-right>
-        <default-settings-toggle />
-      </template>
+    <pro-layout show-setting-btn @setting-change="settingChange" @collapsed-change="collapsedChange">
       <router-view />
     </pro-layout>
   </provide-context>
@@ -16,9 +13,8 @@ import { constantRouterMap } from '#/router/config'
 
 import { useApp } from '#/store/hooks/use-app'
 
-import { ProLayout, createContext, lang } from 'vuetify-pro-layout'
+import { ProLayout, createContext } from 'vuetify-pro-layout'
 import type { ContextInstance } from 'vuetify-pro-layout'
-import DefaultSettingsToggle from './components/SettingsToggle/index.vue'
 
 import logoDefault from '#/assets/icon/logo.svg'
 
@@ -28,8 +24,7 @@ export default defineComponent({
   name: 'BasicLayout',
   components: {
     ProLayout,
-    ProvideContext,
-    DefaultSettingsToggle
+    ProvideContext
   },
   setup() {
     const { setting, dark, mixed, system, rtl, layout, contentWidth, multiTab, primarycolor, progress, collapsed } = useApp()

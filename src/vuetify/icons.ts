@@ -15,7 +15,8 @@ import {
   mdiTabPlus,
   mdiPlusCircle,
   mdiRefreshCircle,
-  mdiMenuDown
+  mdiMenuDown,
+  mdiCogOutline
 } from '@mdi/js'
 
 export {
@@ -34,7 +35,8 @@ export {
   mdiTabPlus,
   mdiPlusCircle,
   mdiRefreshCircle,
-  mdiMenuDown
+  mdiMenuDown,
+  mdiCogOutline
 }
 
 export const icons = {
@@ -53,5 +55,6 @@ export const icons = {
   mdiTabPlus,
   mdiPlusCircle,
   mdiRefreshCircle,
-  mdiMenuDown
+  mdiMenuDown,
+  mdiCogOutline
 }

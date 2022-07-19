@@ -206,7 +206,9 @@ export default defineComponent({
 ```vue
 <template>
   <provide-context :value="context">
-    <pro-layout></pro-layout>
+    <pro-layout show-setting-btn>
+      <router-view />
+    </pro-layout>
   </provide-context>
 </template>
 
@@ -253,6 +255,7 @@ value参数如下：
 
 | 属性      | 描述                 | 类型    | 默认值 |
 | --------- | -------------------- | ------- | ------ |
+| showSettingBtn | 显示打开设置面板按钮 | boolean | false |
 | app-bar-right | v-app右侧插槽 | v-slot | |
 | @setting-change | 设置更新事件 | ({ type, value }: { type: string, value: any }) => void |        |
 | @collapsed-change | collapsed更新事件 | (value: boolean) => void |        |
