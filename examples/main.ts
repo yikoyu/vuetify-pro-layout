@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VCA, { createApp, h } from '@vue/composition-api'
 import { createVuetifyProLayout, PageHeaderWrapper } from 'vuetify-pro-layout'
-import 'vuetify-pro-layout/lib/style.css'
+import 'vuetify-pro-layout/style.css'
 import App from './App.vue'
 
 import { createVuetify } from './core/vuetify'
