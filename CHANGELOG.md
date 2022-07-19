@@ -1,3 +1,16 @@
+# [2.2.0](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.1.2...v2.2.0) (2022-07-19)
+
+
+### Bug Fixes
+
+* **DefaultMultiTab:** 关闭标签后tab底部定位不准 ([7e1cf43](https://github.com/yikoyu/vuetify-pro-layout/commit/7e1cf4372de8f397cd7a152ea39a56edd419cb51))
+
+
+### Features
+
+* **install:** 添加createVuetifyProLayout辅助声明方法 ([1c9f1a3](https://github.com/yikoyu/vuetify-pro-layout/commit/1c9f1a39487a335a22f0f48851e90fba1d218129))
+* **ProLayout:** 添加打开设置抽屉按钮，使用show-setting-btn对其进行控制 ([ea37e31](https://github.com/yikoyu/vuetify-pro-layout/commit/ea37e31d52f313b34b906e3bafa33a3d50e71578))
+
 ## [2.1.2](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.1.1...v2.1.2) (2022-04-29)
 
 
@@ -66,6 +79,3 @@
 
 
 # 2.0.0 (2021-12-28)
-
-
-
