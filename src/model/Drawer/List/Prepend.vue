@@ -17,12 +17,12 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 
-import { useContext } from '@/hooks'
+import { injectContext } from '@/hooks'
 
 export default defineComponent({
   name: 'DefaultDrawerListPrepend',
   setup() {
-    const { settings, title, logo } = useContext()
+    const { settings, title, logo } = injectContext()
 
     return {
       settings,

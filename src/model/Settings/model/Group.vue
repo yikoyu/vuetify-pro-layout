@@ -28,7 +28,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, PropType } from '@vue/composition-api'
-import { useContext } from '@/hooks'
+import { injectContext } from '@/hooks'
 
 export default defineComponent({
   name: 'DefaultSettingsGroup',
@@ -51,7 +51,7 @@ export default defineComponent({
     }
   },
   setup(props, { emit }) {
-    const { settings } = useContext()
+    const { settings } = injectContext()
 
     const internalValueSync = computed({
       get: () => props.internalValue,

@@ -25,7 +25,7 @@ import { computed, defineComponent, unref } from '@vue/composition-api'
 
 import { DefaultDrawerList, DefaultDrawerListPrepend } from './List'
 
-import { useContext } from '@/hooks'
+import { injectContext } from '@/hooks'
 
 export default defineComponent({
   name: 'DefaultDrawer',
@@ -34,7 +34,7 @@ export default defineComponent({
     DefaultDrawerListPrepend
   },
   setup(props, { root, emit }) {
-    const { settings, menu, collapsed } = useContext()
+    const { settings, menu, collapsed } = injectContext()
 
     const miniVariant = computed(() => {
       return root.$vuetify.breakpoint.mobile ? false : !unref(collapsed)

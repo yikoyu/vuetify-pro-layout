@@ -25,7 +25,7 @@ import DefaultAppBar from '../AppBar/index.vue'
 import DefaultDrawer from '../Drawer/index.vue'
 import DefaultSettings from '../Settings/index.vue'
 
-import { useContext } from '@/hooks'
+import { injectContext } from '@/hooks'
 
 export default defineComponent({
   name: 'ProLayout',
@@ -35,7 +35,7 @@ export default defineComponent({
     DefaultSettings
   },
   setup(props, { emit }) {
-    const { settings } = useContext()
+    const { settings } = injectContext()
 
     function settingChange({ type, value }: { type: string; value: string | boolean }) {
       emit('setting-change', { type, value })

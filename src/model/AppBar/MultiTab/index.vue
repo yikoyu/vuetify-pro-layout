@@ -53,7 +53,7 @@ import { computed, defineComponent, ref, unref, watch } from '@vue/composition-a
 import { Route } from 'vue-router'
 import { AppContextMenu } from '@/components'
 import { mdiDotsVertical } from '@/vuetify/icons'
-import { useContext } from '@/hooks'
+import { injectContext } from '@/hooks'
 
 export default defineComponent({
   name: 'DefaultMultiTab',
@@ -64,7 +64,7 @@ export default defineComponent({
     const tabsRef = ref<Nullable<Recordable>>(null)
     const contextmenu = ref<Nullable<Recordable>>(null)
 
-    const { settings, i18nRender } = useContext()
+    const { settings, i18nRender } = injectContext()
 
     const snackbar = ref<boolean>(false)
     const fullPathList = ref<string[]>([])

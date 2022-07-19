@@ -27,7 +27,7 @@ import { defineComponent, unref } from '@vue/composition-api'
 import DefaultNavigationBar from './NavigationBar/index.vue'
 import DefaultMultiTab from './MultiTab/index.vue'
 
-import { useContext } from '@/hooks'
+import { injectContext } from '@/hooks'
 
 export default defineComponent({
   name: 'DefaultAppBar',
@@ -36,7 +36,7 @@ export default defineComponent({
     DefaultMultiTab
   },
   setup(props, { emit }) {
-    const { logo, settings, collapsed } = useContext()
+    const { logo, settings, collapsed } = injectContext()
 
     function collapsedChange() {
       emit('collapsed-change', !unref(collapsed))

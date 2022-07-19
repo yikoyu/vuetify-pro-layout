@@ -1,3 +1,3 @@
 export { useResizeObserver } from './use-resize-observer'
-export { createContext, useContext } from './use-context'
+export { createContext, injectContext } from './create-context'
 export { useRoute } from './use-route'

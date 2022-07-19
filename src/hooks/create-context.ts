@@ -21,7 +21,7 @@ export function createContext() {
   })
 }
 
-export function useContext(defaultValue?: ContextInstance): ToRefs<Readonly<ContextInstance>> {
+export function injectContext(defaultValue?: ContextInstance): ToRefs<Readonly<ContextInstance>> {
   const context = inject(key, ref(defaultValue) as Ref<ContextInstance>)
 
   return toRefs(unref(context))

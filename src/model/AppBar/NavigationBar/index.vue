@@ -11,13 +11,13 @@ import type { RouteConfig } from 'vue-router'
 
 import { AppNestMenu } from '@/components'
 
-import { useContext, useResizeObserver } from '@/hooks'
+import { injectContext, useResizeObserver } from '@/hooks'
 
 export default defineComponent({
   name: 'DefaultNavigationBar',
   components: { AppNestMenu },
   setup() {
-    const { settings, menu } = useContext()
+    const { settings, menu } = injectContext()
 
     const menuRef = ref<Nullable<Element>>(null)
     const showCount = ref<number>(0) // 显示数量

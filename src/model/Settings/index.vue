@@ -89,7 +89,7 @@ import {
 
 import { mdiPlusCircle, mdiRefreshCircle } from '@/vuetify/icons'
 
-import { useContext } from '@/hooks'
+import { injectContext } from '@/hooks'
 
 export default defineComponent({
   name: 'DefaultSettings',
@@ -103,7 +103,7 @@ export default defineComponent({
     DefaultSettingsColorPicker
   },
   setup(props, { emit }) {
-    const { title, setting, settings, i18nRender } = useContext()
+    const { title, setting, settings, i18nRender } = injectContext()
 
     const settingValue = computed({
       get: () => unref(setting),
