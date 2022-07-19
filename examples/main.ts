@@ -13,6 +13,7 @@ const pinia = createPinia(Vue)
 Vue.use(VCA)
 
 Vue.use(VuetifyProLayout, {
+  lang: 'zhHans',
   components: {
     PageHeaderWrapper
   }

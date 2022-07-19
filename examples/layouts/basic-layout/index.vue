@@ -61,8 +61,8 @@ export default defineComponent({
       menu,
       collapsed,
       setting,
-      settings,
-      i18nRender: (key: string) => lang?.['zh-CN']?.[key] || key
+      settings
+      // i18nRender: (key: string) => lang?.['zh-CN']?.[key] || key
     }) as ContextInstance
 
     function collapsedChange(val: boolean) {

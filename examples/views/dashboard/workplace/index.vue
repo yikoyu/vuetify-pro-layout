@@ -1,9 +1,23 @@
 <template>
   <page-header-wrapper :tab-active-key.sync="tabActiveKey" :tab-list="tabList" @tab-change="tabChange">
-    <v-card max-width="350">
+    <v-card max-width="350" class="mb-2">
       <v-card-title>Vuetify Pro Layout</v-card-title>
     </v-card>
-    <v-btn color="primary" @click="toolbar = !toolbar">显示Toolbar</v-btn>
+    <v-btn color="primary" class="me-2" @click="toolbar = !toolbar">显示Toolbar</v-btn>
+    <v-btn color="primary" class="me-2" @click="setLang('zhHans')">切换中文简体</v-btn>
+    <v-btn color="primary" class="me-2" @click="setLang('en')">切换英语</v-btn>
+    <v-btn color="primary" class="me-2" @click="setLang('custom')">切换自定义</v-btn>
+
+    <v-card class="mt-2">
+      <v-card-title>自定义语言</v-card-title>
+      <v-card-text>
+        <v-row>
+          <v-col v-for="key in customLangKey" :key="key" :cols="12" :sm="6" :md="4" :lg="3">
+            <v-text-field v-model="customLang[key]" :label="key"></v-text-field>
+          </v-col>
+        </v-row>
+      </v-card-text>
+    </v-card>
 
     <template #toolbar v-if="toolbar">
       <v-spacer></v-spacer>
@@ -14,13 +28,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref, unref, watch } from '@vue/composition-api'
+import { computed, defineComponent, ref, unref, watch } from '@vue/composition-api'
+import { locale, lang } from 'vuetify-pro-layout'
 
 export default defineComponent({
   name: 'DashboardWorkplace',
   setup() {
     const toolbar = ref(false)
-    const lang = reactive({ lang: '' })
+    const customLang = ref({ ...lang['en'] })
+    const customLangKey = computed(() => Object.keys(unref(customLang)))
 
     const tabActiveKey = ref<number>(0)
     // const tabList = ref<string[]>(['Tab 1', 'Tab 2', 'Tab 3', 'Tab 4', 'Tab 5'])
@@ -56,12 +72,27 @@ export default defineComponent({
       console.log('change', e, unref(tabList)[e.index])
     }
 
+    watch(
+      customLang,
+      lang => {
+        locale.setMessage('custom', lang)
+      },
+      { immediate: true }
+    )
+
+    function setLang(lang: string) {
+      locale.setLang(lang)
+    }
+
     return {
       toolbar,
+      customLang,
+      customLangKey,
 
       tabActiveKey,
       tabList,
-      tabChange
+      tabChange,
+      setLang
     }
   }
 })
