@@ -34,12 +34,13 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build:lib": "vue-tsc --noEmit && vite build",
-    "build:examples": "pnpm build:lib && vue-tsc --noEmit && vite build --mode examples",
+    "build:lib": "pnpm check:types && vite build",
+    "build:examples": "pnpm build:lib && pnpm check:types && vite build --mode examples",
     "lint": "eslint {src,examples}/**/*.{js,ts,tsx,vue}",
     "lint:fix": "eslint {src,examples}/**/*.{js,ts,tsx,vue} --fix",
     "git-commit": "git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "check:types": "vue-tsc --noEmit --skipLibCheck",
     "push": "pnpm build:lib && pnpm publish --no-git-checks --registry https://registry.npmjs.org/"
   },
   "config": {
@@ -49,7 +50,7 @@
   },
   "lint-staged": {
     "{src,examples}/**/*.{js,jsx,ts,tsx,vue}": [
-      "eslint --fix", 
+      "eslint --fix",
       "git add"
     ]
   },
@@ -89,7 +90,7 @@
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",
     "vue-template-compiler": "^2.6.14",
-    "vue-tsc": "^0.29.5",
+    "vue-tsc": "^0.38.8",
     "vuetify": "^2.6.2"
   },
   "dependencies": {
