@@ -2,12 +2,9 @@
   "name": "examples",
   "version": "0.0.0",
   "dependencies": {
-    "@vue/composition-api": "^1.4.3",
-    "pinia": "^2.0.8",
-    "pinia-plugin-persistedstate": "^1.0.2",
+    "pinia": "^2.0.16",
+    "pinia-plugin-persistedstate": "^1.6.3",
     "vue": "^2.6.14",
-    "vue-router": "^3.5.3",
-    "vuetify": "^2.6.2",
-    "vuetify-pro-layout": "workspace:^2.1.2"
+    "vuetify-pro-layout": "workspace:*"
   }
 }
