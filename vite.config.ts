@@ -1,6 +1,5 @@
 import { resolve } from 'path'
-import { defineConfig, UserConfig } from 'vite'
-// import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
 import eslintPlugin from 'vite-plugin-eslint'
 import dts from 'vite-plugin-dts'
@@ -9,56 +8,30 @@ import Components from 'unplugin-vue-components/vite'
 import { VuetifyResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  const isExamples = mode === 'examples'
-
-  const config: UserConfig = {
-    base: '/vuetify-pro-layout/',
-    plugins: [
-      createVuePlugin(),
-      Components({
-        dirs: undefined,
-        dts: false,
-        resolvers: [VuetifyResolver()]
-      }),
-      eslintPlugin({
-        fix: true
-      })
-    ],
-    optimizeDeps: {
-      include: ['vue', '@vue/composition-api', 'vuetify', 'vuetify/lib']
-    },
-    resolve: {
-      alias: {
-        '@': resolve(__dirname, 'src'),
-        '#': resolve(__dirname, 'examples')
-      }
+export default defineConfig({
+  plugins: [
+    createVuePlugin(),
+    Components({
+      dirs: undefined,
+      dts: false,
+      resolvers: [VuetifyResolver()]
+    }),
+    eslintPlugin({
+      fix: true
+    }),
+    dts({
+      insertTypesEntry: true
+    })
+  ],
+  optimizeDeps: {
+    include: ['vue', '@vue/composition-api', 'vuetify', 'vuetify/lib']
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src')
     }
-  }
-
-  if (isExamples) {
-    const build: UserConfig['build'] = {
-      rollupOptions: {
-        output: {
-          manualChunks(id) {
-            const chunks = [
-              { test: /[\\/]node_modules[\\/]_?vue\//, name: 'chunk-vue' },
-              { test: /[\\/]node_modules[\\/]_?vuetify(.*)/, name: 'chunk-vuetify' }
-            ]
-
-            const chunk = chunks.find(({ test }) => test.test(id))
-            if (chunk) return chunk.name
-          }
-        }
-      }
-    }
-
-    config.build = build
-
-    return config
-  }
-
-  const build: UserConfig['build'] = {
+  },
+  build: {
     outDir: 'lib',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
@@ -66,9 +39,10 @@ export default defineConfig(({ mode }) => {
     },
     rollupOptions: {
       output: {
+        exports: 'named',
         globals: {
           vue: 'Vue',
-          vueCompositionApi: '@vue/composition-api',
+          '@vue/composition-api': 'VueCompositionApi',
           vuetify: 'Vuetify',
           'vuetify/lib': 'VuetifyLib'
         }
@@ -76,13 +50,4 @@ export default defineConfig(({ mode }) => {
       external: ['vue', '@vue/composition-api', 'vuetify', 'vuetify/lib']
     }
   }
-
-  const dtsPlugin = dts({
-    insertTypesEntry: true
-  })
-
-  config.plugins?.push(dtsPlugin)
-  config.build = build
-
-  return config
 })
