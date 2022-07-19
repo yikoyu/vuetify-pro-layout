@@ -22,7 +22,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from '@vue/composition-api'
 import type { RouteConfig } from 'vue-router'
-import { useRoute } from '@/hooks'
+import { useRouteMeta } from '@/hooks'
 
 export default defineComponent({
   name: 'DefaultDrawerListItem',
@@ -34,7 +34,7 @@ export default defineComponent({
   },
   setup(props) {
     return {
-      ...useRoute(props.item)
+      ...useRouteMeta(props.item)
     }
   }
 })

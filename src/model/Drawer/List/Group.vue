@@ -36,7 +36,7 @@
 <script lang="ts">
 import { defineComponent, ref, unref, computed, PropType } from '@vue/composition-api'
 import type { RouteConfig } from 'vue-router'
-import { useRoute } from '@/hooks'
+import { useRouteMeta } from '@/hooks'
 
 import { DefaultDrawerListItem } from './'
 
@@ -58,7 +58,7 @@ export default defineComponent({
     }
   },
   setup(props) {
-    const { routeMeta, isShow } = useRoute(props.item)
+    const { routeMeta, isShow } = useRouteMeta(props.item)
 
     const model = ref<Nullable<boolean>>(null)
 

@@ -1,7 +1,7 @@
 import { computed, unref } from '@vue/composition-api'
 import type { RouteConfig } from 'vue-router'
 
-export function useRoute(route: RouteConfig) {
+export function useRouteMeta(route: RouteConfig) {
   const routeMeta = computed((): Partial<NonNullable<RouteConfig['meta']>> => {
     return route.meta || {}
   })
