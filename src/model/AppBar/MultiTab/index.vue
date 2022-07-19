@@ -54,13 +54,18 @@ import { Route } from 'vue-router'
 import { AppContextMenu } from '@/components'
 import { mdiDotsVertical } from '@/vuetify/icons'
 import { injectContext } from '@/hooks'
+import { useContext, useRoute, useRouter } from '@/hooks/core'
 
 export default defineComponent({
   name: 'DefaultMultiTab',
   components: {
     AppContextMenu
   },
-  setup(prop, { root }) {
+  setup() {
+    const root = useContext()
+    const route = useRoute()
+    const router = useRouter()
+
     const tabsRef = ref<Nullable<Recordable>>(null)
     const contextmenu = ref<Nullable<Recordable>>(null)
 
@@ -70,9 +75,9 @@ export default defineComponent({
     const fullPathList = ref<string[]>([])
     const pages = ref<Route[]>([])
     const routePath = computed({
-      get: () => root.$route.fullPath,
+      get: () => route.fullPath,
       set: (val: string) => {
-        root.$router.push(val)
+        router.push(val)
       }
     })
 

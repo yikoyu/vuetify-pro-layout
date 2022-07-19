@@ -7,6 +7,8 @@ import { computed, defineComponent, onMounted, ref, PropType } from '@vue/compos
 import DefaultSettingsGroup from './Group.vue'
 import { mdiWhiteBalanceSunny, mdiWeatherNight, mdiDesktopTowerMonitor } from '@/vuetify/icons'
 import { useEmitChange } from '../hooks/use-emit-change'
+import { useVuetify } from '@/hooks/core'
+import Logger from '@/utils/logger'
 
 const IN_BROWSER = typeof window !== 'undefined'
 
@@ -31,7 +33,9 @@ export default defineComponent({
       default: (t: string): string => t
     }
   },
-  setup(props, { emit, root }) {
+  setup(props, { emit }) {
+    const vuetify = useVuetify()
+
     const { onEmitChange } = useEmitChange(emit)
     const path = ref<string>('theme')
 
@@ -84,7 +88,7 @@ export default defineComponent({
     }
 
     function setTheme(iDark = false, iMixed = false, iSystem = false) {
-      root.$vuetify.theme.dark = iDark
+      vuetify.theme.dark = iDark
 
       onEmitChange('dark', iDark)
       onEmitChange('mixed', iMixed)
@@ -92,9 +96,25 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(() => {
-        if (props.system) setSystemTheme()
-      })
+      const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+      try {
+        // Chrome & Firefox
+        darkMediaQuery.addEventListener('change', () => {
+          if (props.system) setSystemTheme()
+        })
+      } catch (e1) {
+        try {
+          // Safari
+          darkMediaQuery.addListener(() => {
+            if (props.system) setSystemTheme()
+          })
+        } catch (e2) {
+          if (e2 instanceof Error) {
+            Logger.error(e2.message)
+          }
+        }
+      }
 
       initTheme()
     })

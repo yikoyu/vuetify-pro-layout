@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, reactive, ref, toRefs, watch } from '@vue/composition-api'
+import { useVuetify } from '@/hooks/core'
 
 export interface IItem {
   title: string
@@ -25,7 +26,9 @@ export default defineComponent({
       default: () => []
     }
   },
-  setup(props, { root }) {
+  setup() {
+    const vuetify = useVuetify()
+
     const visible = ref(false)
     const menuMinWidth = ref(105)
 
@@ -48,9 +51,9 @@ export default defineComponent({
       const maxLeft = offsetWidth - menuMinWidth.value // left boundary
       const left = e.clientX - offsetLeft + 15 // 15: margin right
       if (left > maxLeft) {
-        position.x = maxLeft + root.$vuetify.application.left
+        position.x = maxLeft + vuetify.application.left
       } else {
-        position.x = left + root.$vuetify.application.left
+        position.x = left + vuetify.application.left
       }
       position.y = e.clientY
       visible.value = true

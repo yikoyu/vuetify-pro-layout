@@ -11,6 +11,7 @@ import { defineComponent, ref, computed, PropType, onMounted } from '@vue/compos
 
 import DefaultSettingsGroup from './Group.vue'
 import { useEmitChange } from '../hooks/use-emit-change'
+import { useVuetify } from '@/hooks/core'
 
 export default defineComponent({
   name: 'DefaultSettingsColorPicker',
@@ -27,7 +28,9 @@ export default defineComponent({
       default: (t: string): string => t
     }
   },
-  setup(props, { emit, root }) {
+  setup(props, { emit }) {
+    const vuetify = useVuetify()
+
     const { onEmitChange } = useEmitChange(emit)
     const path = ref<string>('primarycolor')
 
@@ -52,8 +55,8 @@ export default defineComponent({
 
     function initPrimary(primary?: string) {
       if (!primary) return
-      root.$vuetify.theme.themes.light.primary = primary
-      root.$vuetify.theme.themes.dark.primary = primary
+      vuetify.theme.themes.light.primary = primary
+      vuetify.theme.themes.dark.primary = primary
     }
 
     return {

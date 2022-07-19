@@ -7,6 +7,7 @@ import { computed, defineComponent, onMounted, ref, PropType } from '@vue/compos
 import DefaultSettingsGroup from './Group.vue'
 import { mdiFormatTextdirectionLToR, mdiFormatTextdirectionRToL } from '@/vuetify/icons'
 import { useEmitChange } from '../hooks/use-emit-change'
+import { useVuetify } from '@/hooks/core'
 
 export default defineComponent({
   name: 'DefaultSettingsRtl',
@@ -21,7 +22,9 @@ export default defineComponent({
       default: (t: string): string => t
     }
   },
-  setup(props, { emit, root }) {
+  setup(props, { emit }) {
+    const vuetify = useVuetify()
+
     const { onEmitChange } = useEmitChange(emit)
     const path = ref<string>('direction')
 
@@ -50,7 +53,7 @@ export default defineComponent({
 
     function initPtl(rtl?: boolean) {
       if (typeof rtl !== 'boolean') return
-      root.$vuetify.rtl = rtl
+      vuetify.rtl = rtl
     }
 
     return {

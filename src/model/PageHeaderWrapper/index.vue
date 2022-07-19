@@ -39,6 +39,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, PropType } from '@vue/composition-api'
+import { useVuetify, useRoute } from '@/hooks/core'
 
 interface Tab {
   label: string
@@ -71,25 +72,28 @@ export default defineComponent({
       default: 0
     }
   },
-  setup(prop, { emit, root }) {
+  setup(props, { emit }) {
+    const route = useRoute()
+    const vuetify = useVuetify()
+
     const toolbarStyle = computed(() => ({
       position: 'fixed',
       bottom: 0,
-      left: root.$vuetify.application.left + 'px',
-      right: root.$vuetify.application.right + 'px',
+      left: vuetify.application.left + 'px',
+      right: vuetify.application.right + 'px',
       'margin-bottom': '0px',
       transform: 'translateY(0px)'
     }))
 
     const tabActiveKeySync = computed({
-      get: () => prop.tabActiveKey,
+      get: () => props.tabActiveKey,
       set: (val: number) => {
         emit('update:tabActiveKey', val)
       }
     })
 
     const matchRoute = computed(() => {
-      return root.$route.matched.map((item: Record<string, any>) => {
+      return route.matched.map((item: Record<string, any>) => {
         return {
           text: item.meta.title,
           to: item.path || '/'
@@ -97,10 +101,10 @@ export default defineComponent({
       })
     })
 
-    const routeName = computed(() => root.$route.meta?.title)
+    const routeName = computed(() => route.meta?.title)
 
     function handleChange(e: number) {
-      const item = prop.tabList[e]
+      const item = props.tabList[e]
       emit('tab-change', { index: e, ...(isObject(item) ? item : {}) })
     }
 
