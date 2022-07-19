@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VCA, { createApp, h } from '@vue/composition-api'
-import VuetifyProLayout, { PageHeaderWrapper } from 'vuetify-pro-layout'
+import { createVuetifyProLayout, PageHeaderWrapper } from 'vuetify-pro-layout'
 import 'vuetify-pro-layout/lib/style.css'
 import App from './App.vue'
 
@@ -12,14 +12,14 @@ const pinia = createPinia(Vue)
 
 Vue.use(VCA)
 
-Vue.use(VuetifyProLayout, {
+const VuetifyProLayoutPlugin = createVuetifyProLayout({
   lang: 'zhHans',
   components: {
     PageHeaderWrapper
   }
 })
 
-import './global.scss'
+Vue.use(VuetifyProLayoutPlugin)
 
 const app = createApp({
   vuetify,

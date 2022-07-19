@@ -137,11 +137,13 @@ export default defineComponent({
 ### 设置语言
 你可以在安装插件的时候声明
 ```TypeScript
-import VuetifyProLayout from 'vuetify-pro-layout'
+import { createVuetifyProLayout } from 'vuetify-pro-layout'
 
-Vue.use(VuetifyProLayout, {
+const VuetifyProLayoutPlugin = createVuetifyProLayout({
   lang: 'zhHans'
 })
+
+Vue.use(VuetifyProLayoutPlugin)
 ```
 
 或者调用方法动态修改

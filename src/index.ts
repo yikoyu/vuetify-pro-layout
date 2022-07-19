@@ -32,7 +32,7 @@ import { icons } from './vuetify/icons'
 
 interface InstallationOptions {
   lang?: string
-  components: Record<string, VueConstructor>
+  components?: Record<string, VueConstructor>
 }
 
 const install: PluginFunction<InstallationOptions> = (_Vue, options): void => {
@@ -41,6 +41,14 @@ const install: PluginFunction<InstallationOptions> = (_Vue, options): void => {
   if (lang) locale.setLang(lang)
 
   Object.keys(components).forEach(key => _Vue.component(key, components[key]))
+}
+
+const createVuetifyProLayout = (opts: InstallationOptions): PluginFunction<InstallationOptions> => {
+  const _install: PluginFunction<InstallationOptions> = _Vue => {
+    install(_Vue, opts)
+  }
+
+  return _install
 }
 
 // 判断是否是以文件方式或者CDN方式，如果是，则不用调用 Vue.use()。在 CommonJS 中应始终使用 Vue.use()
@@ -58,6 +66,6 @@ export { ProLayout, DefaultSettings, PageHeaderWrapper }
 export { AppMenu, AppNestMenu, AppSheet, AppTooltipBtn, AppContextMenu }
 export { icons as defaultIcons }
 export { locale, Lang as lang }
-export { createContext }
+export { createVuetifyProLayout, createContext }
 export type { ContextInstance }
 export default install
