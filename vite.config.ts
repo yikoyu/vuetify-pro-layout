@@ -22,6 +22,8 @@ export default defineConfig(({ mode }) => {
         }
       }),
       Components({
+        dirs: undefined,
+        dts: false,
         resolvers: [VuetifyResolver()]
       }),
       eslintPlugin({
@@ -81,11 +83,10 @@ export default defineConfig(({ mode }) => {
   }
 
   const dtsPlugin = dts({
-    tsConfigFilePath: 'tsconfig.lib.json',
     insertTypesEntry: true
   })
 
-  config.plugins.push(dtsPlugin)
+  config.plugins?.push(dtsPlugin)
   config.build = build
 
   return config
