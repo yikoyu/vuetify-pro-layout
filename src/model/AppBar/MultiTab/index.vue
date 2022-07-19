@@ -128,6 +128,8 @@ export default defineComponent({
     }
 
     return {
+      tabsRef,
+
       settings,
       i18nRender,
       mdiDotsVertical,
