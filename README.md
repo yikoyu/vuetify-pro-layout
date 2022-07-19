@@ -134,17 +134,40 @@ export default defineComponent({
 ```
 
 ## 国际化
+### 设置语言
+你可以在安装插件的时候声明
+```TypeScript
+import VuetifyProLayout from 'vuetify-pro-layout'
 
-## API
-```ts
-import { lang } from 'vuetify-pro-layout'
-
-// 将 语言包导入vue-i18n中
-const zhCN = lang['zh-CN'] // 中文
-const enUS = lang['en-US'] // 英文
+Vue.use(VuetifyProLayout, {
+  lang: 'zhHans'
+})
 ```
 
-不使用国际化:
+或者调用方法动态修改
+```TypeScript
+import { locale } from 'vuetify-pro-layout'
+
+locale.setLang('zhHans')
+```
+可用的语言:
+- en (默认)
+- en-US
+- zhHans
+- zh-CN
+
+### 加载新语言
+当前语言暂未提供时，可以使用 `setMessage` 进行设置
+```TypeScript
+import { locale } from 'vuetify-pro-layout'
+
+locale.setMessage('zhHant', {
+  // 国际化文本
+})
+locale.setLang('zhHant')
+```
+
+### 覆盖国际化方法
 ```vue
 <template>
   <provide-context :value="context"></provide-context>
@@ -162,7 +185,9 @@ export default defineComponent({
   setup() {
     const context = reactive({
       ...
-      i18nRender: (key: string) => lang?.['zh-CN']?.[key] || key
+      i18nRender: (key: string) => {
+        // 你的国际化函数
+      }
     }) as ContextInstance
 
     return {
@@ -172,6 +197,8 @@ export default defineComponent({
 })
 </script>
 ```
+
+## 使用
 
 ### ProvideContext
 ```vue

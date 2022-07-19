@@ -26,21 +26,21 @@ declare module 'vue-router' {
 import { createContext } from './hooks'
 import type { ContextInstance } from './type'
 
-import lang from './locales'
+import locale, { Lang } from './locales'
 
 import { icons } from './vuetify/icons'
 
 interface InstallationOptions {
+  lang?: string
   components: Record<string, VueConstructor>
 }
 
-const install: PluginFunction<InstallationOptions> = (Vue, options): void => {
-  const { components = {} } = options || {}
-  const keys = Object.keys(components)
+const install: PluginFunction<InstallationOptions> = (_Vue, options): void => {
+  const { components = {}, lang } = options || {}
 
-  keys.forEach(key => {
-    Vue.component(key, components[key])
-  })
+  if (lang) locale.setLang(lang)
+
+  Object.keys(components).forEach(key => _Vue.component(key, components[key]))
 }
 
 // 判断是否是以文件方式或者CDN方式，如果是，则不用调用 Vue.use()。在 CommonJS 中应始终使用 Vue.use()
@@ -57,7 +57,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { ProLayout, DefaultSettings, PageHeaderWrapper }
 export { AppMenu, AppNestMenu, AppSheet, AppTooltipBtn, AppContextMenu }
 export { icons as defaultIcons }
-export { lang }
+export { locale, Lang as lang }
 export { createContext }
 export type { ContextInstance }
 export default install

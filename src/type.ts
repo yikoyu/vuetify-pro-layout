@@ -21,5 +21,5 @@ export interface ContextInstance {
   collapsed: boolean
   setting: boolean
   settings: Settings
-  i18nRender: (t: string) => string
+  i18nRender?: (t: string) => string
 }
