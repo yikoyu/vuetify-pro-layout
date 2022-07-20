@@ -17,10 +17,10 @@
     "layout"
   ],
   "main": "./lib/vuetify-pro-layout.umd.js",
-  "module": "./lib/vuetify-pro-layout.es.js",
+  "module": "./lib/vuetify-pro-layout.mjs",
   "exports": {
     ".": {
-      "import": "./lib/vuetify-pro-layout.es.js",
+      "import": "./lib/vuetify-pro-layout.mjs",
       "require": "./lib/vuetify-pro-layout.umd.js"
     },
     "./style.css": {
@@ -89,9 +89,9 @@
     "semantic-release": "^19.0.3",
     "typescript": "^4.7.4",
     "unplugin-vue-components": "^0.21.1",
-    "vite": "^2.9.14",
+    "vite": "^3.0.2",
     "vite-plugin-dts": "^1.3.1",
-    "vite-plugin-eslint": "^1.6.1",
+    "vite-plugin-eslint": "^1.7.0",
     "vite-plugin-vue2": "^2.0.2",
     "vue": "^2.6.14",
     "vue-router": "^3.5.4",

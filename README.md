@@ -11,8 +11,8 @@
   <a href="https://www.npmjs.org/package/vuetify-pro-layout">
     <img src="https://img.shields.io/npm/v/vuetify-pro-layout.svg">
   </a>
-  <a href="http://img.badgesize.io/https://unpkg.com/vuetify-pro-layout/lib/vuetify-pro-layout.es.js?compression=gzip&label=gzip">
-    <img src="http://img.badgesize.io/https://unpkg.com/vuetify-pro-layout/lib/vuetify-pro-layout.es.js?compression=gzip&label=gzip">
+  <a href="http://img.badgesize.io/https://unpkg.com/vuetify-pro-layout/lib/vuetify-pro-layout.mjs?compression=gzip&label=gzip">
+    <img src="http://img.badgesize.io/https://unpkg.com/vuetify-pro-layout/lib/vuetify-pro-layout.mjs?compression=gzip&label=gzip">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
