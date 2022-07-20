@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.2.0...v2.2.1) (2022-07-20)
+
+
+### Bug Fixes
+
+* **types:** 自定义类型无法识别，取消使用自定义类型 ([08316d0](https://github.com/yikoyu/vuetify-pro-layout/commit/08316d0831243cde904134b8a4aad8e0a4f6d33e))
+
 # [2.2.0](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.1.2...v2.2.0) (2022-07-19)
 
 
