@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, unref } from '@vue/composition-api'
+import { computed, defineComponent, unref } from 'vue-demi'
 
 import { DefaultDrawerList, DefaultDrawerListPrepend } from './List'
 

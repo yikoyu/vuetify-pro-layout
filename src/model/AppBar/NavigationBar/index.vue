@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, unref, computed } from '@vue/composition-api'
+import { defineComponent, ref, unref, computed } from 'vue-demi'
 import clonedeep from 'lodash.clonedeep'
 import type { RouteConfig } from 'vue-router'
 

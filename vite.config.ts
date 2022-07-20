@@ -24,7 +24,7 @@ export default defineConfig({
     })
   ],
   optimizeDeps: {
-    include: ['vue', '@vue/composition-api', 'vuetify', 'vuetify/lib']
+    include: ['vue', 'vue-demi', 'vuetify', 'vuetify/lib']
   },
   resolve: {
     alias: {
@@ -42,12 +42,12 @@ export default defineConfig({
         exports: 'named',
         globals: {
           vue: 'Vue',
-          '@vue/composition-api': 'VueCompositionApi',
+          'vue-demi': 'vueDemi',
           vuetify: 'Vuetify',
           'vuetify/lib': 'VuetifyLib'
         }
       },
-      external: ['vue', '@vue/composition-api', 'vuetify', 'vuetify/lib']
+      external: ['vue', 'vue-demi', 'vuetify', 'vuetify/lib']
     }
   }
 })

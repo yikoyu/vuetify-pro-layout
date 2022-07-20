@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, unref, computed, PropType } from '@vue/composition-api'
+import { defineComponent, ref, unref, computed, PropType } from 'vue-demi'
 import type { RouteConfig } from 'vue-router'
 import { useRouteMeta } from '@/hooks'
 

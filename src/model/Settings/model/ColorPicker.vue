@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, PropType, onMounted } from '@vue/composition-api'
+import { defineComponent, ref, computed, PropType, onMounted } from 'vue-demi'
 
 import DefaultSettingsGroup from './Group.vue'
 import { useEmitChange } from '../hooks/use-emit-change'

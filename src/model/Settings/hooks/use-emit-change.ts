@@ -1,4 +1,4 @@
-import type { SetupContext } from '@vue/composition-api'
+import type { SetupContext } from 'vue-demi'
 import type { Settings } from '@/type'
 
 export interface EmitType extends Settings {

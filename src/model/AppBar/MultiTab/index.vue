@@ -49,8 +49,8 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref, unref, watch } from '@vue/composition-api'
-import type { Ref } from '@vue/composition-api'
+import { computed, defineComponent, ref, unref, watch } from 'vue-demi'
+import type { Ref } from 'vue-demi'
 import type { Route } from 'vue-router'
 import { AppContextMenu } from '@/components'
 import { mdiDotsVertical } from '@/vuetify/icons'

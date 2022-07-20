@@ -55,7 +55,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, ref } from '@vue/composition-api'
+import { computed, defineComponent, PropType, ref } from 'vue-demi'
 import type { RouteConfig } from 'vue-router'
 
 import { mdiMenuRight } from '@/vuetify/icons'

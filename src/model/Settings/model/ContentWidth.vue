@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref, PropType } from '@vue/composition-api'
+import { computed, defineComponent, ref, PropType } from 'vue-demi'
 import DefaultSettingsGroup from './Group.vue'
 import { mdiArrowCollapseHorizontal, mdiArrowExpandHorizontal } from '@/vuetify/icons'
 import { useEmitChange } from '../hooks/use-emit-change'
