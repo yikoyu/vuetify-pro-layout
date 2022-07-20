@@ -50,7 +50,8 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref, unref, watch } from '@vue/composition-api'
-import { Route } from 'vue-router'
+import type { Ref } from '@vue/composition-api'
+import type { Route } from 'vue-router'
 import { AppContextMenu } from '@/components'
 import { mdiDotsVertical } from '@/vuetify/icons'
 import { injectContext } from '@/hooks'
@@ -75,7 +76,7 @@ export default defineComponent({
 
     const snackbar = ref<boolean>(false)
     const fullPathList = ref<string[]>([])
-    const pages = ref<Route[]>([])
+    const pages: Ref<Route[]> = ref([])
     const routePath = computed({
       get: () => route.fullPath,
       set: (val: string) => {
