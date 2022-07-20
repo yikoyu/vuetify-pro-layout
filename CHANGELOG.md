@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.2.1...v2.2.2) (2022-07-20)
+
+
+### Bug Fixes
+
+* **dts:** 编译后产生的dts过大 ([6cfca17](https://github.com/yikoyu/vuetify-pro-layout/commit/6cfca17346c9ba13c4041a8de816343fb38f73ba))
+
 ## [2.2.1](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.2.0...v2.2.1) (2022-07-20)
 
 
