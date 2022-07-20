@@ -60,7 +60,7 @@ export default defineComponent({
   setup(props) {
     const { routeMeta, isShow } = useRouteMeta(props.item)
 
-    const model = ref<Nullable<boolean>>(null)
+    const model = ref<boolean | null>(null)
 
     const group = computed((): string => setGroup(props.item.children))
 

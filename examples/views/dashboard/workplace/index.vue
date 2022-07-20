@@ -68,7 +68,7 @@ export default defineComponent({
       console.log('watch', val, unref(tabList)[val])
     })
 
-    function tabChange(e: Recordable) {
+    function tabChange(e: Record<string, any>) {
       console.log('change', e, unref(tabList)[e.index])
     }
 

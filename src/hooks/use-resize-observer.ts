@@ -9,14 +9,16 @@ import throttle from 'lodash.throttle'
 
 const WAIT_TIME = 40
 
+type Nullable<T> = T | null
+
 /**
  * @description 监听 body尺寸变化，开启 keep-alive 时，切换页面后会取消监听，回来之后重新进行监听
  * @export
- * @param {Nullable<Element>} el
+ * @param {(Ref<Element | null>)} el
  * @param {ResizeObserverCallback} fn
  * @param {number} [wait=WAIT_TIME]
  */
-export function useResizeObserver(el: Ref<Nullable<Element>>, fn: ResizeObserverCallback, wait: number = WAIT_TIME) {
+export function useResizeObserver(el: Ref<Element | null>, fn: ResizeObserverCallback, wait: number = WAIT_TIME) {
   const resize = new ResizeObserver(throttle(fn, wait))
 
   onMounted(() => {

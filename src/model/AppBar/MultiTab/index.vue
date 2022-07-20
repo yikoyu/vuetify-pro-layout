@@ -56,6 +56,8 @@ import { mdiDotsVertical } from '@/vuetify/icons'
 import { injectContext } from '@/hooks'
 import { useContext, useRoute, useRouter } from '@/hooks/core'
 
+type Recordable<T = any> = Record<string, T>
+
 export default defineComponent({
   name: 'DefaultMultiTab',
   components: {
@@ -66,8 +68,8 @@ export default defineComponent({
     const route = useRoute()
     const router = useRouter()
 
-    const tabsRef = ref<Nullable<Recordable>>(null)
-    const contextmenu = ref<Nullable<Recordable>>(null)
+    const tabsRef = ref<Recordable | null>(null)
+    const contextmenu = ref<Recordable | null>(null)
 
     const { settings, i18nRender } = injectContext()
 

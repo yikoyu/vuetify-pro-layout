@@ -19,7 +19,7 @@ export default defineComponent({
   setup() {
     const { settings, menu } = injectContext()
 
-    const menuRef = ref<Nullable<Element>>(null)
+    const menuRef = ref<Element | null>(null)
     const showCount = ref<number>(0) // 显示数量
 
     const items = computed((): RouteConfig[] => {
