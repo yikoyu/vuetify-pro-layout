@@ -1,6 +1,6 @@
 # Vuetify Pro Layout
 
-easy use `Vuetify` layout
+易于使用的 `Vuetify` 布局
 
 [![download](http://img.shields.io/npm/dm/vuetify-pro-layout.svg)](https://npmcharts.com/compare/vuetify-pro-layout?minimal=true)
 [![version](https://img.shields.io/npm/v/vuetify-pro-layout.svg)](https://www.npmjs.org/package/vuetify-pro-layout)
@@ -9,35 +9,35 @@ easy use `Vuetify` layout
 ![LICENSE](https://img.shields.io/badge/License-MIT-yellow.svg)
 [![semantic-release: vue](https://img.shields.io/badge/semantic--release-vue-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
-English | [中文](./README.zh-CN.md)
+[English](./README.md) | 中文
 
 ## Demo
 👉[https://yikoyu.github.io/vuetify-pro-layout/](https://yikoyu.github.io/vuetify-pro-layout/)
 
-## Features
-- Use [vuetify](https://github.com/vuetifyjs/vuetify) components
-- TypeScript support
-- I18n support(`en`, `zhHans`)
-- Vuetify 2.x and Vue 2.x support
+## 特色
+- 使用 [vuetify](https://github.com/vuetifyjs/vuetify) 组件
+- TypeScript 支持
+- 支持 i18n
+- Vuetify 2.x 和 Vue 2.x 支持
 
-## Installation
-### NPM
+## 安装
+### NPM安装
 ```shell
 pnpm add vuetify-pro-tiptap
-# or
+# 或者
 yarn add vuetify-pro-tiptap
-# or
+# 或者
 npm i vuetify-pro-tiptap -S
 ```
 
-## Global Settings
+## 全局设置
 ```TypeScript
 import { createVuetifyProLayout, PageHeaderWrapper } from 'vuetify-pro-layout'
 import 'vuetify-pro-layout/style.css'
 
 const VuetifyProLayoutPlugin = createVuetifyProLayout({
   lang: 'zhHans',
-  // Global components
+  // 全局注册组件
   components: {
     PageHeaderWrapper
   }
@@ -46,10 +46,10 @@ const VuetifyProLayoutPlugin = createVuetifyProLayout({
 Vue.use(VuetifyProLayoutPlugin)
 ```
 
-## I18n
+## 国际化
 
-### Setting language
-You can declare when you install the plugin.
+### 设置语言
+你可以在安装插件的时候声明
 ```TypeScript
 import { createVuetifyProLayout } from 'vuetify-pro-layout'
 
@@ -60,30 +60,30 @@ const VuetifyProLayoutPlugin = createVuetifyProLayout({
 Vue.use(VuetifyProLayoutPlugin)
 ```
 
-Or use `setLang` dynamic change
+或者调用方法动态修改
 ```TypeScript
 import { locale } from 'vuetify-pro-layout'
 
 locale.setLang('en')
 ```
-Available languages:
+可用的语言:
 - en (默认)
 - en-US
 - zhHans
 - zh-CN
 
-### Use unavailable language
-Loading unavailable language, use `setMessage` for Settings
+### 加载新语言
+当前语言暂未提供时，可以使用 `setMessage` 进行设置
 ```TypeScript
 import { locale } from 'vuetify-pro-layout'
 
 locale.setMessage('zhHant', {
-  // i18n text
+  // 国际化文本
 })
 locale.setLang('zhHant')
 ```
 
-### Rewrite i18n function
+### 重写国际化方法
 ```vue
 <template>
   <provide-context :value="context"></provide-context>
@@ -102,7 +102,7 @@ export default defineComponent({
     const context = reactive({
       ...
       i18nRender: (key: string) => {
-        // your i18n function
+        // 你的国际化函数
       }
     }) as ContextInstance
 
@@ -114,7 +114,7 @@ export default defineComponent({
 </script>
 ```
 
-## Usage
+## 用法
 ```vue
 <script lang="ts">
 import { computed, defineComponent, reactive } from '@vue/composition-api'
@@ -207,45 +207,44 @@ export default defineComponent({
 
 ### ProvideContext
 
-| Name | Type | Default | Description |
+| 属性      | 描述                 | 类型    | 默认值 |
 | --------- | -------------------- | ------- | ------ |
-| title     | Title                 | String  | -      |
-| menu      | Menu                 | Array   | []     |
-| setting   | The Setting drawer value | Boolean | Required   |
-| collapsed | The Menu value          | Boolean | Required   |
-| settings  | Setting drawer object         | Object  | Required   |
-| settings@dark          | Enable dark theme | Boolean | Required |
-| settings@mixed          | Enable mixed theme (unsupport) | Boolean | Required |
-| settings@system          | Follow system theme | Boolean | Required |
-| settings@rtl          | Enable RTL mode | Boolean | Required |
-| settings@layout          | menu mode | ‘side’ \| ‘top’ | Required |
-| settings@contentWidth          | content width mode | ‘fluid’ \| ‘fixed’ | Required |
-| settings@multiTab          | Enable multiTab | Boolean | Required |
-| settings@primary          | primary color | String | Required |
-| settings@progress          | Show progress bar | Boolean | Required |
-| settings@canInstall          | Pwa able install | Boolean | Required |
-| settings@updateAvailable          | Pwa able update | Boolean | Required |
+| title     | 标题                 | String  | -      |
+| menu      | 菜单                 | Array   | []     |
+| setting   | 控制设置抽屉是否显示 | Boolean | 必填   |
+| collapsed | 控制菜单收缩         | Boolean | 必填   |
+| settings  | 设置抽屉对象         | Object  | 必填   |
+| settings@dark          | 是否开启深色模式 | Boolean | 必填 |
+| settings@mixed          | 是否开启mixe模式（暂时不可以） | Boolean | 必填 |
+| settings@system          | 是否跟随系统 | Boolean | 必填 |
+| settings@rtl          | 是否开启RTL模式 | Boolean | 必填 |
+| settings@layout          | 菜单模式 | ‘side’ \| ‘top’ | 必填 |
+| settings@contentWidth          | 内容模式 | ‘fluid’ \| ‘fixed’ | 必填 |
+| settings@multiTab          | 标签模式 | Boolean | 必填 |
+| settings@primary          | 主题色 | String | 必填 |
+| settings@progress          | 进度条是否加载 | Boolean | 必填 |
+| settings@canInstall          | pwa是否可以安装 | Boolean | 必填 |
+| settings@updateAvailable          | pwa是否可以更新 | Boolean | 必填 |
 | logo | logo | SVG | string | svg or string |
-| i18n-render | Local i18n render | Function (key: string) => string \| undefined | undefined |
-
+| i18n-render | 本地国际化渲染函数 | Function (key: string) => string \| false | (t) => t |
 
 ### ProLayout
 
-| Name | Type | Default | Description |
+| 属性      | 描述                 | 类型    | 默认值 |
 | --------- | -------------------- | ------- | ------ |
-| showSettingBtn | Enable setting button | boolean | false |
-| app-bar-right | VApp right slot | v-slot | |
-| @setting-change | Setting drawer change event  | ({ type, value }: { type: string, value: any }) => void |        |
-| @collapsed-change | Menu change event | (value: boolean) => void |        |
+| showSettingBtn | 显示打开设置面板按钮 | boolean | false |
+| app-bar-right | VApp右侧插槽 | v-slot | |
+| @setting-change | 设置更新事件 | ({ type, value }: { type: string, value: any }) => void |        |
+| @collapsed-change | collapsed更新事件 | (value: boolean) => void |        |
 
 ### PageHeaderWrapper
 
-| Name | Type | Default | Description |
+| 属性                   | 描述                | 类型             | 默认值 |
 | ---------------------- | ------------------- | ---------------- | ------ |
-| content                | content area              | String \| v-slot | -      |
-| extra-content          | extra content area       | String \| v-slot | -      |
-| toolbar                | toolbar area                | v-slot           | -      |
-| tab-list               | Tabs list           | string[] \| object[]         | []     |
-| tab-active-key         | The Tab value     | Number           | 0      |
-| @tab-change            | Tab change event        | (e: object) => void    | -      |
+| content                | 内容区              | String \| v-slot | -      |
+| extra-content          | 扩展内容区          | String \| v-slot | -      |
+| toolbar                | 底栏                | v-slot           | -      |
+| tab-list               | Tabs 导航           | string[] \| object[]         | []     |
+| tab-active-key         | 当前 Tab 选中项     | Number           | 0      |
+| @tab-change            | Tab 改变事件        | (e: object) => void    | -      |
 | @update:tab-active-key | tab-active-key.sync |                  | -      |
