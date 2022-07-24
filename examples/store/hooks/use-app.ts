@@ -1,4 +1,4 @@
-import { computed } from '@vue/composition-api'
+import { computed } from 'vue'
 import { useApp as useStoreApp, IApp } from '../app'
 
 export function useApp() {

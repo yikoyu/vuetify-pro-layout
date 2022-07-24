@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import VCA, { createApp, h } from '@vue/composition-api'
 import { createVuetifyProLayout, PageHeaderWrapper } from 'vuetify-pro-layout'
 import 'vuetify-pro-layout/style.css'
 import App from './App.vue'
@@ -10,8 +9,6 @@ import router from './router'
 const vuetify = createVuetify(Vue)
 const pinia = createPinia(Vue)
 
-Vue.use(VCA)
-
 const VuetifyProLayoutPlugin = createVuetifyProLayout({
   lang: 'zhHans',
   components: {
@@ -21,10 +18,9 @@ const VuetifyProLayoutPlugin = createVuetifyProLayout({
 
 Vue.use(VuetifyProLayoutPlugin)
 
-const app = createApp({
+new Vue({
   vuetify,
   router,
   pinia,
-  render: () => h(App)
-})
-app.mount('#app')
+  render: h => h(App)
+}).$mount('#app')

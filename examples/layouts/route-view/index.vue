@@ -7,11 +7,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, watch, computed, reactive } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'RouteView',
-  setup(props, ctx) {
+  setup() {
     // const include: string[] = reactive([])
 
     // const route = computed(() => ctx.root.$route)

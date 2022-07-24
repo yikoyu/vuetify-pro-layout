@@ -3,13 +3,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from '@vue/composition-api'
+import { defineComponent } from 'vue'
 
 // import { useApp } from '@/store/hooks'
 
 export default defineComponent({
   name: 'App',
-  setup(prop, ctx) {
+  setup() {
     // const { lang } = useApp()
 
     // onMounted(() => {

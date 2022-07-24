@@ -1,3 +1,58 @@
+<script setup lang="ts">
+import { computed, ref, unref, watch } from 'vue'
+import { locale, lang } from 'vuetify-pro-layout'
+
+const toolbar = ref(false)
+const customLang = ref({ ...lang['en'] })
+const customLangKey = computed(() => Object.keys(unref(customLang)))
+
+const tabActiveKey = ref<number>(0)
+// const tabList = ref<string[]>(['Tab 1', 'Tab 2', 'Tab 3', 'Tab 4', 'Tab 5'])
+const tabList = ref([
+  {
+    label: 'Tab 1',
+    value: 11
+  },
+  {
+    label: 'Tab 2',
+    value: 22
+  },
+  {
+    label: 'Tab 3',
+    value: 33
+  },
+  {
+    label: 'Tab 4',
+    value: 44,
+    disabled: true
+  },
+  {
+    label: 'Tab 5',
+    value: 55
+  }
+])
+
+watch(tabActiveKey, (val: number) => {
+  console.log('watch', val, unref(tabList)[val])
+})
+
+function tabChange(e: Record<string, any>) {
+  console.log('change', e, unref(tabList)[e.index])
+}
+
+watch(
+  customLang,
+  lang => {
+    locale.setMessage('custom', lang)
+  },
+  { immediate: true }
+)
+
+function setLang(lang: string) {
+  locale.setLang(lang)
+}
+</script>
+
 <template>
   <page-header-wrapper :tab-active-key.sync="tabActiveKey" :tab-list="tabList" @tab-change="tabChange">
     <v-card max-width="350" class="mb-2">
@@ -26,76 +81,5 @@
     </template>
   </page-header-wrapper>
 </template>
-
-<script lang="ts">
-import { computed, defineComponent, ref, unref, watch } from '@vue/composition-api'
-import { locale, lang } from 'vuetify-pro-layout'
-
-export default defineComponent({
-  name: 'DashboardWorkplace',
-  setup() {
-    const toolbar = ref(false)
-    const customLang = ref({ ...lang['en'] })
-    const customLangKey = computed(() => Object.keys(unref(customLang)))
-
-    const tabActiveKey = ref<number>(0)
-    // const tabList = ref<string[]>(['Tab 1', 'Tab 2', 'Tab 3', 'Tab 4', 'Tab 5'])
-    const tabList = ref([
-      {
-        label: 'Tab 1',
-        value: 11
-      },
-      {
-        label: 'Tab 2',
-        value: 22
-      },
-      {
-        label: 'Tab 3',
-        value: 33
-      },
-      {
-        label: 'Tab 4',
-        value: 44,
-        disabled: true
-      },
-      {
-        label: 'Tab 5',
-        value: 55
-      }
-    ])
-
-    watch(tabActiveKey, (val: number) => {
-      console.log('watch', val, unref(tabList)[val])
-    })
-
-    function tabChange(e: Record<string, any>) {
-      console.log('change', e, unref(tabList)[e.index])
-    }
-
-    watch(
-      customLang,
-      lang => {
-        locale.setMessage('custom', lang)
-      },
-      { immediate: true }
-    )
-
-    function setLang(lang: string) {
-      locale.setLang(lang)
-    }
-
-    return {
-      toolbar,
-      customLang,
-      customLangKey,
-
-      tabActiveKey,
-      tabList,
-      tabChange,
-      setLang
-    }
-  }
-})
-</script>
 
 <style lang="scss" scoped></style>
