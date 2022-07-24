@@ -1,3 +1,15 @@
+## [2.3.0](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.2.2...v2.3.0) (2022-07-24)
+
+
+### Features
+
+* 支持vue2.7.x ([ebb2506](https://github.com/yikoyu/vuetify-pro-layout/commit/ebb250630676884d305efe4966d27cb8e4f5027e))
+
+
+### Refactor
+
+* 升级到vue2.7.x ([cd7405d](https://github.com/yikoyu/vuetify-pro-layout/commit/cd7405dd25427e3202a472b3fee2c2e6380ed2f2))
+
 ## [2.2.2](https://github.com/yikoyu/vuetify-pro-layout/compare/v2.2.1...v2.2.2) (2022-07-20)
 
 
