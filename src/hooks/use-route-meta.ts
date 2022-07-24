@@ -1,4 +1,4 @@
-import { computed, unref } from '@vue/composition-api'
+import { computed, unref } from 'vue-demi'
 import type { RouteConfig } from 'vue-router'
 
 export function useRouteMeta(route: RouteConfig) {

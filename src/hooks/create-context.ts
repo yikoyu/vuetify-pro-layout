@@ -1,5 +1,5 @@
-import { defineComponent, unref, inject, provide, computed } from '@vue/composition-api'
-import type { ComputedRef, InjectionKey, PropType } from '@vue/composition-api'
+import { defineComponent, unref, inject, provide, computed } from 'vue-demi'
+import type { ComputedRef, InjectionKey, PropType } from 'vue-demi'
 import { useLocale } from '@/locales'
 import type { ContextInstance } from '@/type'
 

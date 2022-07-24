@@ -21,11 +21,12 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, unref } from '@vue/composition-api'
+import { computed, defineComponent, unref } from 'vue-demi'
 
 import { DefaultDrawerList, DefaultDrawerListPrepend } from './List'
 
 import { injectContext } from '@/hooks'
+import { useVuetify } from '@/hooks/core'
 
 export default defineComponent({
   name: 'DefaultDrawer',
@@ -33,15 +34,17 @@ export default defineComponent({
     DefaultDrawerList,
     DefaultDrawerListPrepend
   },
-  setup(props, { root, emit }) {
+  setup(props, { emit }) {
+    const vuetify = useVuetify()
+
     const { settings, menu, collapsed } = injectContext()
 
     const miniVariant = computed(() => {
-      return root.$vuetify.breakpoint.mobile ? false : !unref(collapsed)
+      return vuetify.breakpoint.mobile ? false : !unref(collapsed)
     })
 
     const drawerCollapsed = computed({
-      get: () => (root.$vuetify.breakpoint.mobile ? unref(collapsed) : true),
+      get: () => (vuetify.breakpoint.mobile ? unref(collapsed) : true),
       set: (val: boolean) => {
         emit('collapsed-change', val)
       }

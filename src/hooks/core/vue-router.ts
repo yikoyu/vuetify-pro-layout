@@ -1,5 +1,5 @@
 import type { Route } from 'vue-router'
-import { getCurrentInstance, reactive, watchEffect } from '@vue/composition-api'
+import { getCurrentInstance, reactive, watchEffect } from 'vue-demi'
 import Logger from '@/utils/logger'
 
 /**

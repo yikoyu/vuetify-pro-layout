@@ -1,4 +1,4 @@
-import { getCurrentInstance, watchEffect } from '@vue/composition-api'
+import { getCurrentInstance, watchEffect } from 'vue-demi'
 import Logger from '@/utils/logger'
 
 /**

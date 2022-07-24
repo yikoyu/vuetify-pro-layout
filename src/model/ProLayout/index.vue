@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, unref } from '@vue/composition-api'
+import { defineComponent, unref } from 'vue-demi'
 
 import DefaultAppBar from '../AppBar/index.vue'
 import DefaultDrawer from '../Drawer/index.vue'

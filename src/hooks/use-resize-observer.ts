@@ -4,7 +4,7 @@
  * @Last Modified by: yikoyu
  * @Last Modified time: 2022-07-20 10:43:32
  */
-import { onMounted, onUnmounted, Ref } from '@vue/composition-api'
+import { onMounted, onUnmounted, Ref } from 'vue-demi'
 import throttle from 'lodash.throttle'
 
 const WAIT_TIME = 40

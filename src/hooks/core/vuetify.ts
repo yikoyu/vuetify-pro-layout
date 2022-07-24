@@ -1,5 +1,5 @@
 import type { Framework } from 'vuetify/types'
-import { getCurrentInstance, reactive } from '@vue/composition-api'
+import { getCurrentInstance, reactive } from 'vue-demi'
 import Logger from '@/utils/logger'
 
 /**

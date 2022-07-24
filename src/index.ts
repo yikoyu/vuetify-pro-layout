@@ -1,4 +1,4 @@
-import { VueConstructor, PluginFunction } from 'vue'
+import type { Plugin } from 'vue-demi'
 
 import ProLayout from './model/ProLayout/index'
 import DefaultSettings from './model/Settings/index'
@@ -32,10 +32,10 @@ import { icons } from './vuetify/icons'
 
 interface InstallationOptions {
   lang?: string
-  components?: Record<string, VueConstructor>
+  components?: Record<string, any>
 }
 
-const install: PluginFunction<InstallationOptions> = (_Vue, options): void => {
+const install: Plugin = (_Vue, options): void => {
   const { components = {}, lang } = options || {}
 
   if (lang) locale.setLang(lang)
@@ -43,8 +43,8 @@ const install: PluginFunction<InstallationOptions> = (_Vue, options): void => {
   Object.keys(components).forEach(key => _Vue.component(key, components[key]))
 }
 
-const createVuetifyProLayout = (opts: InstallationOptions): PluginFunction<InstallationOptions> => {
-  const _install: PluginFunction<InstallationOptions> = _Vue => {
+const createVuetifyProLayout = (opts: InstallationOptions): Plugin => {
+  const _install: Plugin = _Vue => {
     install(_Vue, opts)
   }
 

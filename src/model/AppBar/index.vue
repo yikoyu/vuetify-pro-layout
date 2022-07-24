@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, unref } from '@vue/composition-api'
+import { defineComponent, unref } from 'vue-demi'
 
 import DefaultNavigationBar from './NavigationBar/index.vue'
 import DefaultMultiTab from './MultiTab/index.vue'

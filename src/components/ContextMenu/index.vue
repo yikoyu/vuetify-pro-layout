@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, reactive, ref, toRefs, watch } from '@vue/composition-api'
+import { defineComponent, PropType, reactive, ref, toRefs, watch } from 'vue-demi'
 import { useVuetify } from '@/hooks/core'
 
 export interface IItem {
