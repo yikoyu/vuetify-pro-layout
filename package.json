@@ -2,7 +2,7 @@
   "name": "vuetify-pro-layout",
   "version": "2.2.2",
   "license": "MIT",
-  "description": "vuetify基础布局，开箱即用",
+  "description": "easy use vuetify layout",
   "private": false,
   "author": "yikoyu<2282373181@qq.com>",
   "repository": {
