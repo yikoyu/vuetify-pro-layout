@@ -23,12 +23,88 @@
 ## 安装
 ### NPM安装
 ```shell
-pnpm add vuetify-pro-tiptap
+pnpm add vuetify-pro-layout
 # 或者
-yarn add vuetify-pro-tiptap
+yarn add vuetify-pro-layout
 # 或者
-npm i vuetify-pro-tiptap -S
+npm i vuetify-pro-layout -S
 ```
+在 Vue 2（<2.7.0）下使用 `vuetify-pro-layout`，需要确保 `@vue/composition-api` 已经安装
+```shell
+pnpm add @vue/composition-api
+```
+
+### 安装插件
+
+<details>
+<summary>Vue 2.6.x</summary>
+
+```TypeScript
+import Vue from 'vue'
+import VCA from '@vue/composition-api'
+
+import Vuetify from 'vuetify/lib'
+
+import { createVuetifyProLayout, PageHeaderWrapper } from 'vuetify-pro-layout'
+import 'vuetify-pro-layout/style.css'
+
+import App from './App.vue'
+
+Vue.use(VCA)
+Vue.use(Vuetify)
+
+const vuetify = new Vuetify()
+
+const VuetifyProLayoutPlugin = createVuetifyProLayout({
+  lang: 'zhHans',
+  components: {
+    PageHeaderWrapper
+  }
+})
+
+Vue.use(VuetifyProLayoutPlugin)
+
+new Vue({
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
+```
+
+</details>
+
+<details>
+<summary>Vue 2.7.x</summary>
+
+```TypeScript
+import Vue from 'vue'
+
+import Vuetify from 'vuetify/lib'
+
+import { createVuetifyProLayout, PageHeaderWrapper } from 'vuetify-pro-layout'
+import 'vuetify-pro-layout/style.css'
+
+import App from './App.vue'
+
+Vue.use(Vuetify)
+
+const vuetify = new Vuetify()
+
+const VuetifyProLayoutPlugin = createVuetifyProLayout({
+  lang: 'zhHans',
+  components: {
+    PageHeaderWrapper
+  }
+})
+
+Vue.use(VuetifyProLayoutPlugin)
+
+new Vue({
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
+```
+
+</details>
 
 ## 全局设置
 ```TypeScript

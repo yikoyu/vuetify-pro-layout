@@ -23,12 +23,88 @@ English | [中文](./README.zh-CN.md)
 ## Installation
 ### NPM
 ```shell
-pnpm add vuetify-pro-tiptap
+pnpm add vuetify-pro-layout
 # or
-yarn add vuetify-pro-tiptap
+yarn add vuetify-pro-layout
 # or
-npm i vuetify-pro-tiptap -S
+npm i vuetify-pro-layout -S
 ```
+To make `vuetify-pro-layout` work for Vue 2 (<2.7.0), you need to have `@vue/composition-api` installed:
+```shell
+pnpm add @vue/composition-api
+```
+
+### Install plugin
+
+<details>
+<summary>Vue 2.6.x</summary>
+
+```TypeScript
+import Vue from 'vue'
+import VCA from '@vue/composition-api'
+
+import Vuetify from 'vuetify/lib'
+
+import { createVuetifyProLayout, PageHeaderWrapper } from 'vuetify-pro-layout'
+import 'vuetify-pro-layout/style.css'
+
+import App from './App.vue'
+
+Vue.use(VCA)
+Vue.use(Vuetify)
+
+const vuetify = new Vuetify()
+
+const VuetifyProLayoutPlugin = createVuetifyProLayout({
+  lang: 'zhHans',
+  components: {
+    PageHeaderWrapper
+  }
+})
+
+Vue.use(VuetifyProLayoutPlugin)
+
+new Vue({
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
+```
+
+</details>
+
+<details>
+<summary>Vue 2.7.x</summary>
+
+```TypeScript
+import Vue from 'vue'
+
+import Vuetify from 'vuetify/lib'
+
+import { createVuetifyProLayout, PageHeaderWrapper } from 'vuetify-pro-layout'
+import 'vuetify-pro-layout/style.css'
+
+import App from './App.vue'
+
+Vue.use(Vuetify)
+
+const vuetify = new Vuetify()
+
+const VuetifyProLayoutPlugin = createVuetifyProLayout({
+  lang: 'zhHans',
+  components: {
+    PageHeaderWrapper
+  }
+})
+
+Vue.use(VuetifyProLayoutPlugin)
+
+new Vue({
+  vuetify,
+  render: h => h(App)
+}).$mount('#app')
+```
+
+</details>
 
 ## Global Settings
 ```TypeScript
