@@ -5,7 +5,7 @@
 <script lang="ts">
 import { computed, defineComponent, onMounted, ref, PropType } from 'vue-demi'
 import DefaultSettingsGroup from './Group.vue'
-import { mdiFormatTextdirectionLToR, mdiFormatTextdirectionRToL } from '@/vuetify/icons'
+import { mdiFormatPilcrowArrowLeft, mdiFormatPilcrowArrowRight } from '@/vuetify/icons'
 import { useEmitChange } from '../hooks/use-emit-change'
 import { useVuetify } from '@/hooks/core'
 
@@ -31,11 +31,11 @@ export default defineComponent({
     const items = computed(() => [
       {
         text: 'ltr',
-        icon: mdiFormatTextdirectionLToR
+        icon: mdiFormatPilcrowArrowRight
       },
       {
         text: 'rtl',
-        icon: mdiFormatTextdirectionRToL
+        icon: mdiFormatPilcrowArrowLeft
       }
     ])
 
