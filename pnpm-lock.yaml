@@ -41,12 +41,12 @@ importers:
       vite-plugin-dts: ^1.4.1
       vite-plugin-eslint: ^1.7.0
       vue: ^2.7.8
-      vue-demi: ^0.13.5
+      vue-demi: ^0.13.6
       vue-router: ^3.5.4
       vue-tsc: ^0.39.0
       vuetify: ^2.6.7
     dependencies:
-      vue-demi: 0.13.5_vue@2.7.8
+      vue-demi: 0.13.6_vue@2.7.8
     devDependencies:
       '@commitlint/cli': 17.0.3
       '@commitlint/config-conventional': 17.0.3
@@ -4658,6 +4658,21 @@ packages:
 
   /vue-demi/0.13.5_vue@2.7.8:
     resolution: {integrity: sha512-tO3K2bML3AwiHmVHeKCq6HLef2st4zBXIV5aEkoJl6HZ+gJWxWv2O8wLH8qrA3SX3lDoTDHNghLX1xZg83MXvw==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 2.7.8
+    dev: false
+
+  /vue-demi/0.13.6_vue@2.7.8:
+    resolution: {integrity: sha512-02NYpxgyGE2kKGegRPYlNQSL1UWfA/+JqvzhGCOYjhfbLWXU5QQX0+9pAm/R2sCOPKr5NBxVIab7fvFU0B1RxQ==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
