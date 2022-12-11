@@ -37,7 +37,7 @@ importers:
       semantic-release: ^19.0.5
       typescript: ^4.8.4
       unplugin-vue-components: ^0.22.11
-      vite: ^3.2.4
+      vite: ^3.2.5
       vite-plugin-dts: ^1.4.1
       vite-plugin-eslint: ^1.7.0
       vue: ^2.7.8
@@ -61,7 +61,7 @@ importers:
       '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
       '@types/lodash.clonedeep': 4.5.7
       '@types/lodash.throttle': 4.1.7
-      '@vitejs/plugin-vue2': 1.1.2_vite@3.2.4+vue@2.7.8
+      '@vitejs/plugin-vue2': 1.1.2_vite@3.2.5+vue@2.7.8
       '@vue/eslint-config-prettier': 7.0.0_uoqzb7ub56apwdxrwurswvvfwe
       '@vue/eslint-config-typescript': 11.0.2_xgc4xirg4ejg2tgchx2nhou42q
       '@vue/runtime-dom': 3.2.45
@@ -81,9 +81,9 @@ importers:
       semantic-release: 19.0.5
       typescript: 4.8.4
       unplugin-vue-components: 0.22.11_vue@2.7.8
-      vite: 3.2.4_sass@1.32.13
-      vite-plugin-dts: 1.4.1_vite@3.2.4
-      vite-plugin-eslint: 1.7.0_eslint@8.24.0+vite@3.2.4
+      vite: 3.2.5_sass@1.32.13
+      vite-plugin-dts: 1.4.1_vite@3.2.5
+      vite-plugin-eslint: 1.7.0_eslint@8.24.0+vite@3.2.5
       vue: 2.7.8
       vue-router: 3.5.4_vue@2.7.8
       vue-tsc: 0.39.0_typescript@4.8.4
@@ -988,14 +988,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue2/1.1.2_vite@3.2.4+vue@2.7.8:
+  /@vitejs/plugin-vue2/1.1.2_vite@3.2.5+vue@2.7.8:
     resolution: {integrity: sha512-y6OEA+2UdJ0xrEQHodq20v9r3SpS62IOHrgN92JPLvVpNkhcissu7yvD5PXMzMESyazj0XNWGsc8UQk8+mVrjQ==}
     engines: {node: '>=14.6.0'}
     peerDependencies:
       vite: '>=2.5.10'
       vue: ^2.7.0-0
     dependencies:
-      vite: 3.2.4_sass@1.32.13
+      vite: 3.2.5_sass@1.32.13
       vue: 2.7.8
     dev: true
 
@@ -4665,7 +4665,7 @@ packages:
     engines: {node: '>= 0.10'}
     dev: true
 
-  /vite-plugin-dts/1.4.1_vite@3.2.4:
+  /vite-plugin-dts/1.4.1_vite@3.2.5:
     resolution: {integrity: sha512-jo7E4ZeheD2o48oGiI3EygPbej7ZkGFHg3GVTt7Wuo6NgzThLvuzGGuduaFpnhJOGi1piDFsu6oui/wDKIIORQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -4678,12 +4678,12 @@ packages:
       fast-glob: 3.2.11
       fs-extra: 10.1.0
       ts-morph: 14.0.0
-      vite: 3.2.4_sass@1.32.13
+      vite: 3.2.5_sass@1.32.13
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite-plugin-eslint/1.7.0_eslint@8.24.0+vite@3.2.4:
+  /vite-plugin-eslint/1.7.0_eslint@8.24.0+vite@3.2.5:
     resolution: {integrity: sha512-Kz2HwBeAArmsE0QmWSm+e7CaEQrfMkEZpFw4hngoy6JmERjw7WUH8HLbG1OkreOKX4iIUReOss9N1Mkw4wEk8g==}
     peerDependencies:
       eslint: '>=7'
@@ -4693,11 +4693,11 @@ packages:
       '@types/eslint': 8.4.5
       eslint: 8.24.0
       rollup: 2.77.0
-      vite: 3.2.4_sass@1.32.13
+      vite: 3.2.5_sass@1.32.13
     dev: true
 
-  /vite/3.2.4_sass@1.32.13:
-    resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
+  /vite/3.2.5_sass@1.32.13:
+    resolution: {integrity: sha512-4mVEpXpSOgrssFZAOmGIr85wPHKvaDAcXqxVxVRZhljkJOMZi1ibLibzjLHzJvcok8BMguLc7g1W6W/GqZbLdQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
