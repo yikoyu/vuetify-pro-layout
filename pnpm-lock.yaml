@@ -21,7 +21,7 @@ importers:
       '@vue/eslint-config-prettier': ^7.0.0
       '@vue/eslint-config-typescript': ^11.0.2
       '@vue/runtime-dom': ^3.2.45
-      commitizen: ^4.2.5
+      commitizen: ^4.2.6
       conventional-changelog-conventionalcommits: ^5.0.0
       eslint: ^8.24.0
       eslint-config-prettier: ^8.5.0
@@ -50,7 +50,7 @@ importers:
     devDependencies:
       '@commitlint/cli': 17.2.0
       '@commitlint/config-conventional': 17.2.0
-      '@commitlint/cz-commitlint': 17.2.0_commitizen@4.2.5
+      '@commitlint/cz-commitlint': 17.2.0_commitizen@4.2.6
       '@mdi/js': 7.0.96
       '@rushstack/eslint-patch': 1.2.0
       '@semantic-release/changelog': 6.0.2_semantic-release@19.0.5
@@ -65,7 +65,7 @@ importers:
       '@vue/eslint-config-prettier': 7.0.0_uoqzb7ub56apwdxrwurswvvfwe
       '@vue/eslint-config-typescript': 11.0.2_xgc4xirg4ejg2tgchx2nhou42q
       '@vue/runtime-dom': 3.2.45
-      commitizen: 4.2.5
+      commitizen: 4.2.6
       conventional-changelog-conventionalcommits: 5.0.0
       eslint: 8.24.0
       eslint-config-prettier: 8.5.0_eslint@8.24.0
@@ -183,7 +183,7 @@ packages:
       ajv: 8.11.0
     dev: true
 
-  /@commitlint/cz-commitlint/17.2.0_commitizen@4.2.5:
+  /@commitlint/cz-commitlint/17.2.0_commitizen@4.2.6:
     resolution: {integrity: sha512-I4Ytr2h9oegI2XtuzWAUW3CLbMhzjXoFrrH8qEFfGTwDQQHOxfYDn2aYH32gvYs2cjFPpNvIaBg9v+bea2oodg==}
     engines: {node: '>=v14'}
     peerDependencies:
@@ -194,7 +194,7 @@ packages:
       '@commitlint/load': 17.2.0
       '@commitlint/types': 17.0.0
       chalk: 4.1.2
-      commitizen: 4.2.5
+      commitizen: 4.2.6
       lodash: 4.17.21
       word-wrap: 1.2.3
     transitivePeerDependencies:
@@ -1582,8 +1582,8 @@ packages:
     engines: {node: ^12.20.0 || >=14}
     dev: true
 
-  /commitizen/4.2.5:
-    resolution: {integrity: sha512-9sXju8Qrz1B4Tw7kC5KhnvwYQN88qs2zbiB8oyMsnXZyJ24PPGiNM3nHr73d32dnE3i8VJEXddBFIbOgYSEXtQ==}
+  /commitizen/4.2.6:
+    resolution: {integrity: sha512-RyTM+EiD9GO01DJUn9MRRAet3XUHGfoUZoksLfr+1ym1Xt2q5EYJs9Fg2BtKSb5Mo53i0BtMBmWMHQXVlZ/L9w==}
     engines: {node: '>= 12'}
     hasBin: true
     dependencies:
@@ -1741,7 +1741,7 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.2.5
+      commitizen: 4.2.6
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
