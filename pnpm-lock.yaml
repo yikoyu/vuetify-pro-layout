@@ -25,7 +25,7 @@ importers:
       conventional-changelog-conventionalcommits: ^5.0.0
       eslint: ^8.36.0
       eslint-config-prettier: ^8.7.0
-      eslint-define-config: ^1.16.0
+      eslint-define-config: ^1.17.0
       eslint-plugin-prettier: ^4.2.1
       eslint-plugin-vue: ^9.9.0
       husky: ^8.0.3
@@ -69,7 +69,7 @@ importers:
       conventional-changelog-conventionalcommits: 5.0.0
       eslint: 8.36.0
       eslint-config-prettier: 8.7.0_eslint@8.36.0
-      eslint-define-config: 1.16.0
+      eslint-define-config: 1.17.0
       eslint-plugin-prettier: 4.2.1_eqzx3hpkgx5nnvxls3azrcc7dm
       eslint-plugin-vue: 9.9.0_eslint@8.36.0
       husky: 8.0.3
@@ -2178,8 +2178,8 @@ packages:
       eslint: 8.36.0
     dev: true
 
-  /eslint-define-config/1.16.0:
-    resolution: {integrity: sha512-0gMi2IIDVDNAcy0nDaRss41cBTRMFFAp83WBcGIPi5S7uMOLhNmvbSPozvOoUxv5dIRuGV6E6l+HUnEoFyEbFg==}
+  /eslint-define-config/1.17.0:
+    resolution: {integrity: sha512-J1sweMoWsLcokaiAlfOCC4yMoHbvC/kDAxorm5TkUcD74w+kauMIyjKLM3dOadNxVKOjDiYN1Tu2x9N+4EUuuQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13', pnpm: '>= 7.0.0'}
     dev: true
 
