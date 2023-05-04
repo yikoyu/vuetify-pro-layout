@@ -44,7 +44,7 @@ importers:
       vue-demi: ^0.13.11
       vue-router: ^3.5.4
       vue-tsc: ^0.40.13
-      vuetify: ^2.6.14
+      vuetify: ^2.6.15
     dependencies:
       vue-demi: 0.13.11_vue@2.7.8
     devDependencies:
@@ -87,7 +87,7 @@ importers:
       vue: 2.7.8
       vue-router: 3.5.4_vue@2.7.8
       vue-tsc: 0.40.13_typescript@4.9.5
-      vuetify: 2.6.14_vue@2.7.8
+      vuetify: 2.6.15_vue@2.7.8
 
   examples:
     specifiers:
@@ -4922,8 +4922,8 @@ packages:
       '@vue/compiler-sfc': 2.7.8
       csstype: 3.1.0
 
-  /vuetify/2.6.14_vue@2.7.8:
-    resolution: {integrity: sha512-nr6wU3uTzhhEPssH23cW0Ee/hCrayp7cjl3nNjM2OmNwiJlV91tZiL1VO3597SqZyjh1xIa+m9J2rpKTSdIlrA==}
+  /vuetify/2.6.15_vue@2.7.8:
+    resolution: {integrity: sha512-2a6sBSHzivXgi9pZMyHuzTgMyInCkj/BrVwTnoCa1Y/Dnfwj7lkWzgKQDScbGVK0q4vJ+YHoBBrLOmnhz1R0YA==}
     peerDependencies:
       vue: ^2.6.4
     dependencies:
