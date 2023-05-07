@@ -84,7 +84,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@types/lodash.clonedeep": "^4.5.7",
     "@types/lodash.throttle": "^4.1.7",
-    "@vitejs/plugin-vue2": "^1.1.2",
+    "@vitejs/plugin-vue2": "^2.2.0",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/runtime-dom": "^3.2.47",

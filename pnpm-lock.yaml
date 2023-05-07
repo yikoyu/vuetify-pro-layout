@@ -17,7 +17,7 @@ importers:
       '@semantic-release/release-notes-generator': ^10.0.3
       '@types/lodash.clonedeep': ^4.5.7
       '@types/lodash.throttle': ^4.1.7
-      '@vitejs/plugin-vue2': ^1.1.2
+      '@vitejs/plugin-vue2': ^2.2.0
       '@vue/eslint-config-prettier': ^7.1.0
       '@vue/eslint-config-typescript': ^11.0.3
       '@vue/runtime-dom': ^3.2.47
@@ -61,7 +61,7 @@ importers:
       '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
       '@types/lodash.clonedeep': 4.5.7
       '@types/lodash.throttle': 4.1.7
-      '@vitejs/plugin-vue2': 1.1.2_vite@3.2.6+vue@2.7.8
+      '@vitejs/plugin-vue2': 2.2.0_vite@3.2.6+vue@2.7.8
       '@vue/eslint-config-prettier': 7.1.0_aq37wtubambsjkbuajxtwljxa4
       '@vue/eslint-config-typescript': 11.0.3_bafmzs5fhkl65iifxzjfj7ss3a
       '@vue/runtime-dom': 3.2.47
@@ -1036,11 +1036,11 @@ packages:
       eslint-visitor-keys: 3.4.0
     dev: true
 
-  /@vitejs/plugin-vue2/1.1.2_vite@3.2.6+vue@2.7.8:
-    resolution: {integrity: sha512-y6OEA+2UdJ0xrEQHodq20v9r3SpS62IOHrgN92JPLvVpNkhcissu7yvD5PXMzMESyazj0XNWGsc8UQk8+mVrjQ==}
-    engines: {node: '>=14.6.0'}
+  /@vitejs/plugin-vue2/2.2.0_vite@3.2.6+vue@2.7.8:
+    resolution: {integrity: sha512-1km7zEuZ/9QRPvzXSjikbTYGQPG86Mq1baktpC4sXqsXlb02HQKfi+fl8qVS703JM7cgm24Ga9j+RwKmvFn90A==}
+    engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
-      vite: '>=2.5.10'
+      vite: ^3.0.0 || ^4.0.0
       vue: ^2.7.0-0
     dependencies:
       vite: 3.2.6_sass@1.32.13
