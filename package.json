@@ -87,7 +87,7 @@
     "@vitejs/plugin-vue2": "^1.1.2",
     "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/eslint-config-typescript": "^11.0.3",
-    "@vue/runtime-dom": "^3.2.47",
+    "@vue/runtime-dom": "^3.3.2",
     "commitizen": "^4.3.0",
     "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^8.40.0",
